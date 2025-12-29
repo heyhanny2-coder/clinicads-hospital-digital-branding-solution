@@ -1,0 +1,9 @@
+
+{
+  "name": "ClinicAds - Hospital Digital Branding Solution",
+  "description": "A high-end, professional multi-page landing page for ClinicAds, a specialized digital branding solution for hospitals and clinics. Built with React, Tailwind CSS, and Spline integration.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
