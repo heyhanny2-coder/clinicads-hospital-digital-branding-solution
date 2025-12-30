@@ -71,39 +71,48 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-[72px] bg-black z-40 animate-fade-in flex flex-col p-6 gap-8">
-          {navLinks.map((link) => (
-            link.isExternal ? (
-              <a
-                key={link.path}
-                href={link.path}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-2xl font-bold tracking-tight text-white"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {link.name}
-              </a>
-            ) : (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`text-2xl font-bold tracking-tight ${
-                  location.pathname === link.path ? 'text-red-500' : 'text-white'
-                }`}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {link.name}
-              </Link>
-            )
-          ))}
-          <Link
-            to="/contact"
-            className="bg-red-600 text-white px-8 py-4 rounded-xl text-center text-lg font-bold mt-4"
+        <div className="md:hidden fixed inset-0 top-0 bg-black/95 backdrop-blur-xl z-[60] animate-fade-in flex flex-col justify-center items-center p-6 text-center">
+          <button 
+            className="absolute top-6 right-6 text-white p-2"
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            무료 진단 받기
-          </Link>
+            <X size={32} />
+          </button>
+          
+          <div className="flex flex-col gap-10">
+            {navLinks.map((link) => (
+              link.isExternal ? (
+                <a
+                  key={link.path}
+                  href={link.path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-3xl font-bold tracking-tight text-white hover:text-red-500 transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.name}
+                </a>
+              ) : (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`text-3xl font-bold tracking-tight transition-colors ${
+                    location.pathname === link.path ? 'text-red-500' : 'text-white hover:text-red-500'
+                  }`}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              )
+            ))}
+            <Link
+              to="/contact"
+              className="bg-red-600 text-white px-10 py-5 rounded-full text-center text-xl font-bold mt-4 shadow-2xl transform active:scale-95 transition-all"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              무료 진단 받기
+            </Link>
+          </div>
         </div>
       )}
     </nav>
