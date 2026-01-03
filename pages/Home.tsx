@@ -62,19 +62,17 @@ const Home: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {PORTFOLIO.slice(0, 3).map((item) => (
-              <div key={item.id} className="group">
-                <div className="aspect-[4/3] overflow-hidden rounded-2xl mb-6 relative">
-                  <img 
-                    src={item.imageUrl} 
-                    alt={item.title} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-100"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
-                    <span className="bg-red-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">View Case</span>
+              <div key={item.id} className="group bg-white/[0.03] border border-white/10 rounded-3xl p-10 hover:border-red-500/30 transition-all duration-500 min-h-[300px] flex flex-col justify-between">
+                <div>
+                  <div className="flex justify-between items-center mb-6">
+                    <span className="text-red-500 text-[10px] font-black tracking-[0.2em] uppercase">{item.category}</span>
+                    <span className="text-gray-600 text-[10px] font-bold">{item.location}</span>
                   </div>
+                  <h4 className="text-3xl font-bold text-white group-hover:text-red-500 transition-colors leading-tight">{item.title}</h4>
                 </div>
-                <p className="text-red-500 text-xs font-bold tracking-[0.2em] mb-2 uppercase">{item.category}</p>
-                <h4 className="text-2xl font-bold group-hover:text-red-500 transition-colors">{item.title}</h4>
+                <div className="mt-8">
+                  <div className="w-12 h-1 bg-white/10 group-hover:bg-red-600 group-hover:w-full transition-all duration-500"></div>
+                </div>
               </div>
             ))}
           </div>

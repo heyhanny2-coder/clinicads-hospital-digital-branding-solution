@@ -16,31 +16,37 @@ const Portfolio: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {PORTFOLIO.map((item) => (
-            <div key={item.id} className="group bg-white/[0.02] border border-white/5 rounded-3xl overflow-hidden hover:border-red-500/30 transition-all duration-500 flex flex-col">
-              <div className="relative aspect-[4/3] overflow-hidden bg-gray-900">
-                <img 
-                  src={item.imageUrl} 
-                  alt={item.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-100"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-opacity"></div>
-                <div className="absolute bottom-6 left-6 right-6">
-                   <p className="text-red-500 text-[10px] font-black tracking-[0.2em] mb-2 uppercase">{item.category} • {item.location}</p>
-                   <h3 className="text-2xl font-bold text-white group-hover:text-red-500 transition-colors">{item.title}</h3>
+            <div key={item.id} className="group bg-white/[0.03] border border-white/10 rounded-3xl p-10 hover:border-red-500/30 transition-all duration-500 flex flex-col min-h-[350px] justify-between relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-1 h-full bg-red-600/20 group-hover:bg-red-600 transition-colors"></div>
+              <div>
+                <div className="flex justify-between items-start mb-6">
+                  <span className="text-red-500 text-[10px] font-black tracking-[0.2em] uppercase bg-red-500/10 px-3 py-1 rounded-full">
+                    {item.category}
+                  </span>
+                  <span className="text-gray-500 text-[10px] font-bold tracking-[0.1em] uppercase">
+                    {item.location}
+                  </span>
                 </div>
-              </div>
-              
-              <div className="p-8 flex-grow flex flex-col">
+                
+                <h3 className="text-3xl font-bold text-white group-hover:text-red-500 transition-colors mb-8 leading-tight">
+                  {item.title}
+                </h3>
+                
                 {item.review && (
-                  <div className="relative pt-6">
-                    <Quote className="absolute top-0 left-0 text-red-500/20 w-8 h-8" />
-                    <p className="text-gray-400 text-sm leading-relaxed italic relative z-10">
+                  <div className="relative pt-6 border-t border-white/5">
+                    <Quote className="absolute -top-3 left-0 text-red-500/20 w-8 h-8" />
+                    <p className="text-gray-400 text-lg leading-relaxed italic relative z-10 font-light">
                       "{item.review}"
                     </p>
                   </div>
                 )}
+              </div>
+              
+              <div className="mt-8 flex items-center gap-2 text-[10px] font-bold tracking-widest text-gray-600 uppercase group-hover:text-red-500 transition-colors">
+                <span>View Case Study</span>
+                <div className="w-8 h-[1px] bg-gray-800 group-hover:bg-red-500 transition-all"></div>
               </div>
             </div>
           ))}
