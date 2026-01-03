@@ -7,15 +7,11 @@ import { CONTACT_INFO } from '../../constants';
 const Hero: React.FC = () => {
   return (
     <section className="relative w-full h-[100vh] flex items-center overflow-hidden bg-black">
-      {/* Spline Background */}
+      {/* Premium Background Gradient */}
       <div className="absolute inset-0 z-0">
-        <iframe 
-          src='https://my.spline.design/interactivecubes-3mjDbMdayKyYrzEMPV1fLI26/' 
-          frameBorder='0' 
-          width='100%' 
-          height='100%'
-          className="w-full h-full opacity-60"
-        ></iframe>
+        <div className="absolute inset-0 bg-gradient-to-br from-red-900/20 via-black to-black"></div>
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-red-600/10 rounded-full blur-[120px] animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-white/5 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
 
       <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent z-10 pointer-events-none" />
