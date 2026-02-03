@@ -1,9 +1,11 @@
 
 import React, { useState } from 'react';
-import { Send, CheckCircle } from 'lucide-react';
+import { Send, CheckCircle, Loader2 } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const ContactForm: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     hospitalName: '',
@@ -13,10 +15,42 @@ const ContactForm: React.FC = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
+    setIsSubmitting(true);
+
+    try {
+      // EmailJS 설정값
+      // VITE_ prefix는 Vite 환경 변수를 사용하기 위함입니다.
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID';
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID';
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY';
+
+      const templateParams = {
+        to_email: 'wtp_ph@wiztheplanning.com',
+        from_name: formData.name,
+        hospital_name: formData.hospitalName,
+        region: formData.region,
+        department: formData.department,
+        phone: formData.phone,
+        message: formData.message,
+      };
+
+      await emailjs.send(
+        serviceId,
+        templateId,
+        templateParams,
+        publicKey
+      );
+
+      console.log('Email sent successfully!');
+      setSubmitted(true);
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      alert('상담 신청 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -50,6 +84,7 @@ const ContactForm: React.FC = () => {
               className="w-full bg-white/5 border border-white/10 rounded-lg px-5 py-4 text-white focus:outline-none focus:border-red-500 transition-colors"
               value={formData.name}
               onChange={(e) => setFormData({...formData, name: e.target.value})}
+              disabled={isSubmitting}
             />
           </div>
           <div className="space-y-2">
@@ -61,6 +96,7 @@ const ContactForm: React.FC = () => {
               className="w-full bg-white/5 border border-white/10 rounded-lg px-5 py-4 text-white focus:outline-none focus:border-red-500 transition-colors"
               value={formData.phone}
               onChange={(e) => setFormData({...formData, phone: e.target.value})}
+              disabled={isSubmitting}
             />
           </div>
         </div>
@@ -75,6 +111,7 @@ const ContactForm: React.FC = () => {
               className="w-full bg-white/5 border border-white/10 rounded-lg px-5 py-4 text-white focus:outline-none focus:border-red-500 transition-colors"
               value={formData.hospitalName}
               onChange={(e) => setFormData({...formData, hospitalName: e.target.value})}
+              disabled={isSubmitting}
             />
           </div>
           <div className="space-y-2">
@@ -83,6 +120,7 @@ const ContactForm: React.FC = () => {
               className="w-full bg-white/5 border border-white/10 rounded-lg px-5 py-4 text-white focus:outline-none focus:border-red-500 transition-colors appearance-none"
               value={formData.department}
               onChange={(e) => setFormData({...formData, department: e.target.value})}
+              disabled={isSubmitting}
             >
               <option value="" className="bg-black">진료과를 선택해주세요</option>
               <option value="정형외과" className="bg-black">정형외과</option>
@@ -103,6 +141,7 @@ const ContactForm: React.FC = () => {
             className="w-full bg-white/5 border border-white/10 rounded-lg px-5 py-4 text-white focus:outline-none focus:border-red-500 transition-colors"
             value={formData.region}
             onChange={(e) => setFormData({...formData, region: e.target.value})}
+            disabled={isSubmitting}
           />
         </div>
 
@@ -114,15 +153,26 @@ const ContactForm: React.FC = () => {
             className="w-full bg-white/5 border border-white/10 rounded-lg px-5 py-4 text-white focus:outline-none focus:border-red-500 transition-colors"
             value={formData.message}
             onChange={(e) => setFormData({...formData, message: e.target.value})}
+            disabled={isSubmitting}
           />
         </div>
 
         <button 
           type="submit"
-          className="w-full bg-red-600 hover:bg-red-700 text-white font-black text-xl py-6 rounded-xl transition-all flex items-center justify-center gap-3 transform hover:-translate-y-1 shadow-2xl"
+          disabled={isSubmitting}
+          className="w-full bg-red-600 hover:bg-red-700 disabled:bg-red-800 disabled:opacity-50 text-white font-black text-xl py-6 rounded-xl transition-all flex items-center justify-center gap-3 transform hover:-translate-y-1 shadow-2xl"
         >
-          무료 진단 & 상담 신청하기
-          <Send size={24} />
+          {isSubmitting ? (
+            <>
+              전송 중...
+              <Loader2 size={24} className="animate-spin" />
+            </>
+          ) : (
+            <>
+              무료 진단 & 상담 신청하기
+              <Send size={24} />
+            </>
+          )}
         </button>
 
         <p className="text-[10px] text-gray-600 text-center uppercase tracking-widest">
