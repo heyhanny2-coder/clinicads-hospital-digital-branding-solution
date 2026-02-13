@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Shield, Search, TrendingUp, Users, Instagram, Layout, MessageSquare, PenTool } from 'lucide-react';
+import { Instagram, Layout, MessageSquare, PenTool, Globe, Video } from 'lucide-react';
 import { ServiceItem, PortfolioItem, ProcessStep } from './types';
 
 export const SERVICES: ServiceItem[] = [
@@ -9,21 +9,21 @@ export const SERVICES: ServiceItem[] = [
     title: '검색 & 콘텐츠',
     description: '생활정보형 블로그 + 브랜드 블로그 운영',
     icon: 'PenTool',
-    details: ['진료과·지역 기반 키워드 설계', 'SEO 구조 설계', '브랜드 가치 중심 원고 기획']
+    details: ['진료과·지역 기반 키워드 설계', 'SEO 구조 설계', '검색 순위 상승 전략', '브랜드 가치 중심 원고 기획', 'AI가 찾아주는 병원 검색 노출 설계']
   },
   {
     id: 'place',
     title: '네이버 플레이스',
     description: '병원의 얼굴, 플레이스 100% 최적화',
     icon: 'Layout',
-    details: ['대표사진·소식·쿠폰 세팅', '순위 구조 개선 전략', '편의 기능(예약/톡톡) 활성화']
+    details: ['대표사진·소식·쿠폰 세팅', '순위 구조 개선·순위 상승 전략', '편의 기능(예약/톡톡) 활성화']
   },
   {
     id: 'review',
     title: '리뷰 관리',
     description: '환자의 신뢰를 결정하는 마지막 한 조각',
     icon: 'MessageSquare',
-    details: ['방문자 리뷰 모니터링', '악성·오해성 리뷰 대응 가이드', '신뢰도 높은 리뷰 시스템 구축']
+    details: ['신뢰감 있는 리뷰 축적', '모0닥·나00닥터 리뷰 축적', '지식인 작업 (예: "00동 괜찮은 치과 추천해주세요" 검색 노출)', '방문자 리뷰 모니터링', '악성·오해성 리뷰 대응 가이드']
   },
   {
     id: 'sns',
@@ -31,6 +31,20 @@ export const SERVICES: ServiceItem[] = [
     description: '팬덤을 만드는 병원 인스타그램',
     icon: 'Instagram',
     details: ['주 2회 프리미엄 콘텐츠', '신뢰 중심 브랜딩 기획', '환자와의 소통 채널 운영']
+  },
+  {
+    id: 'website',
+    title: '홈페이지 제작',
+    description: '병원 신뢰의 첫 관문, 브랜드 웹사이트',
+    icon: 'Globe',
+    details: ['의료법 준수 반응형 웹사이트', '예약·문의 연동', '검색 최적화 구조']
+  },
+  {
+    id: 'video',
+    title: '전문가 촬영 & 영상 제작',
+    description: '프로급 비주얼로 병원 신뢰도를 높입니다',
+    icon: 'Video',
+    details: ['전문가 촬영 지원', '영상 제작 및 편집', '각종 디자인 제작 (배너, 홍보물, SNS)', '유튜브·SNS용 콘텐츠 제작']
   }
 ];
 
@@ -131,6 +145,38 @@ export const PORTFOLIO: PortfolioItem[] = [
     review: '맡긴 뒤 온라인 문의가 많이 늘었어요! 카카오톡 상담도 활발해졌네요.',
     imageUrl: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800&auto=format&fit=crop' 
   },
+  { 
+    id: '12', 
+    category: '정신건강의학과', 
+    title: '서울뜰정신건강의학과의원', 
+    location: '서울',
+    review: '플레이스와 블로그 운영으로 검색 노출이 좋아졌어요. 신뢰도도 함께 올랐네요.',
+    imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop' 
+  },
+  { 
+    id: '13', 
+    category: '치과', 
+    title: '산본엘치과', 
+    location: '군포시',
+    review: '디지털 브랜딩 후 플레이스 순위가 올라가고 신규 환자가 늘었어요!',
+    imageUrl: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800&auto=format&fit=crop' 
+  },
+  { 
+    id: '14', 
+    category: '치과', 
+    title: '연세타이밍치과의원', 
+    location: '강남구',
+    review: '통합 마케팅으로 병원 가치가 높아졌어요. 예약도 꾸준히 들어오고 있어요.',
+    imageUrl: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800&auto=format&fit=crop' 
+  },
+  { 
+    id: '15', 
+    category: '정형외과', 
+    title: '광명척척정형외과의원', 
+    location: '광명시',
+    review: '지역 검색에서 잘 노출되게 되었어요. 콘텐츠 퀄리티 덕분에 신뢰도도 올랐어요.',
+    imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop' 
+  },
 ];
 
 export const CONTACT_INFO = {
@@ -147,8 +193,8 @@ export const CONTACT_INFO = {
 };
 
 export const PAIN_POINTS = [
-  { title: '의료법 리스크', description: '법적 규제 때문에 무엇이 가능하고 불가능한지 혼란스럽습니다.' },
-  { title: '파편화된 마케팅', description: '블로그, 플레이스, 리뷰가 제각각이라 시너지가 나지 않습니다.' },
-  { title: '불투명한 결과', description: '광고비는 나가는데 정확한 유입 경로와 성과 설명이 없습니다.' },
-  { title: '브랜드 부재', description: '광고는 반짝 했지만, 병원 자체의 가치는 쌓이지 않았습니다.' }
+  { title: '의료법이 두렵다', description: '선전·과대광고 금지 때문에 뭘 해도 되고 안 되는지 모르겠다.' },
+  { title: '채널이 각자 논다', description: '블로그, 플레이스, 인스타가 따로 놀아 시너지가 전혀 안 난다.' },
+  { title: '결과가 보이지 않는다', description: '광고비는 나가는데, 어디서 얼마나 왔는지 설명을 못 받는다.' },
+  { title: '광고 끄면 끝이다', description: '광고로 잠깐 늘었지만, 병원 자체에 쌓인 게 없어 끄면 다시 줄어든다.' }
 ];
