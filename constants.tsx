@@ -193,8 +193,8 @@ export const CONTACT_INFO = {
 };
 
 export const PAIN_POINTS = [
-  { title: '의료법이 두렵다', description: '선전·과대광고 금지 때문에 뭘 해도 되고 안 되는지 모르겠다.' },
-  { title: '채널이 각자 논다', description: '블로그, 플레이스, 인스타가 따로 놀아 시너지가 전혀 안 난다.' },
-  { title: '결과가 보이지 않는다', description: '광고비는 나가는데, 어디서 얼마나 왔는지 설명을 못 받는다.' },
-  { title: '광고 끄면 끝이다', description: '광고로 잠깐 늘었지만, 병원 자체에 쌓인 게 없어 끄면 다시 줄어든다.' }
+  { title: '의료법이 두렵다', description: '선전·과대광고 금지 때문에 뭘 해도 되고 안 되는지 모르겠다.', imageUrl: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=400&auto=format&fit=crop' },
+  { title: '채널이 각자 논다', description: '블로그, 플레이스, 인스타가 따로 놀아 시너지가 전혀 안 난다.', imageUrl: 'https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=400&auto=format&fit=crop' },
+  { title: '결과가 보이지 않는다', description: '광고비는 나가는데, 어디서 얼마나 왔는지 설명을 못 받는다.', imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400&auto=format&fit=crop' },
+  { title: '광고 끄면 끝이다', description: '광고로 잠깐 늘었지만, 병원 자체에 쌓인 게 없어 끄면 다시 줄어든다.', imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=400&auto=format&fit=crop' }
 ];

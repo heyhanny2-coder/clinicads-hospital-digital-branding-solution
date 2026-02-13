@@ -6,12 +6,12 @@ import FadeInSection from './FadeInSection';
 
 const Solution: React.FC = () => {
   const points = [
-    { id: '01', title: '맞춤형 1:1 컨설팅', text: '당신의 병원만을 위한 현황 분석으로, 가장 효과적인 전환 경로를 설계합니다.' },
-    { id: '02', title: '강점 발견 & 강조', text: '병원의 숨겨진 강점을 찾아, 환자가 선택해야 할 이유를 분명히 합니다.' },
-    { id: '03', title: '효율적 투자 설계', text: '광고비를 줄이면서 신뢰는 쌓이도록, 맞춤형 전략을 제안합니다.' },
-    { id: '04', title: '24/7 리스크 관리', text: '악성 리뷰·부정적 노출을 예방하는 철저한 모니터링으로 병원 평판을 지킵니다.' },
-    { id: '05', title: '투명한 진행 공유', text: '매체별 일정과 성과를 실시간 공유해, 원장님이 언제든 확인하실 수 있습니다.' },
-    { id: '06', title: '끊임없는 동행', text: '한 번 시작하면, 결과가 나올 때까지 끝까지 함께합니다.' },
+    { id: '01', title: '맞춤형 1:1 컨설팅', text: '당신의 병원만을 위한 현황 분석으로, 가장 효과적인 전환 경로를 설계합니다.', imageUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=300&auto=format&fit=crop' },
+    { id: '02', title: '강점 발견 & 강조', text: '병원의 숨겨진 강점을 찾아, 환자가 선택해야 할 이유를 분명히 합니다.', imageUrl: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=300&auto=format&fit=crop' },
+    { id: '03', title: '효율적 투자 설계', text: '광고비를 줄이면서 신뢰는 쌓이도록, 맞춤형 전략을 제안합니다.', imageUrl: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=300&auto=format&fit=crop' },
+    { id: '04', title: '24/7 리스크 관리', text: '악성 리뷰·부정적 노출을 예방하는 철저한 모니터링으로 병원 평판을 지킵니다.', imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=300&auto=format&fit=crop' },
+    { id: '05', title: '투명한 진행 공유', text: '매체별 일정과 성과를 실시간 공유해, 원장님이 언제든 확인하실 수 있습니다.', imageUrl: 'https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=300&auto=format&fit=crop' },
+    { id: '06', title: '끊임없는 동행', text: '한 번 시작하면, 결과가 나올 때까지 끝까지 함께합니다.', imageUrl: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=300&auto=format&fit=crop' },
   ];
 
   return (
@@ -46,8 +46,16 @@ const Solution: React.FC = () => {
           {points.map((p, i) => (
             <FadeInSection key={p.id} delay={i * 80}>
             <div
-              className="p-14 bg-slate-50 border border-slate-200 rounded-2xl shadow-sm hover:shadow-lg hover:bg-white hover:border-blue-200 hover:-translate-y-1 transition-all duration-300"
+              className="overflow-hidden bg-slate-50 border border-slate-200 rounded-2xl shadow-sm hover:shadow-lg hover:bg-white hover:border-blue-200 hover:-translate-y-1 transition-all duration-300"
             >
+              <div className="h-20 overflow-hidden">
+                <img
+                  src={p.imageUrl}
+                  alt={p.title}
+                  className="w-full h-full object-cover opacity-90"
+                />
+              </div>
+              <div className="p-14 pt-8">
               <span className="text-2xl font-black text-blue-600/80 block mb-10 font-serif italic">
                 {p.id}
               </span>
@@ -57,6 +65,7 @@ const Solution: React.FC = () => {
               <p className="text-slate-600 text-[15px] leading-relaxed font-normal">
                 {p.text}
               </p>
+              </div>
             </div>
             </FadeInSection>
           ))}

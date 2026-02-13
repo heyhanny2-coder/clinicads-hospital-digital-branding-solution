@@ -41,7 +41,7 @@ const Section: React.FC<SectionProps> = ({
   return (
     <section className={`${bgClass} ${paddingClass} ${className}`}>
       <div
-        className={`w-full ${maxWidth[containerSize]} mx-auto px-8 md:px-12 ${centered ? 'text-center' : ''}`}
+        className={`w-full ${maxWidth[containerSize]} mx-auto px-5 md:px-8 ${centered ? 'text-center' : ''}`}
       >
         {children}
       </div>

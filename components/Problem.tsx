@@ -29,22 +29,31 @@ const Problem: React.FC = () => {
       </div>
       </FadeInSection>
 
-      <div className="max-w-5xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div className="max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-8">
           {PAIN_POINTS.map((item, index) => (
             <FadeInSection key={index} delay={index * 80}>
             <div
-              className="p-14 bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-md hover:border-blue-200 hover:-translate-y-1 transition-all duration-300"
+              className="overflow-hidden bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-md hover:border-blue-200 hover:-translate-y-1 transition-all duration-300"
             >
-              <span className="text-2xl font-black text-blue-600/80 block mb-10 font-serif italic">
-                0{index + 1}
-              </span>
-              <h3 className="text-xl font-bold text-slate-900 mb-5 tracking-tight">
-                {item.title}
-              </h3>
-              <p className="text-slate-600 text-[15px] leading-relaxed font-normal">
-                {item.description}
-              </p>
+              <div className="h-32 overflow-hidden">
+                <img
+                  src={item.imageUrl}
+                  alt={item.title}
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                />
+              </div>
+              <div className="px-8 py-11">
+                <span className="text-2xl font-black text-blue-600/80 block mb-6 font-serif italic">
+                  0{index + 1}
+                </span>
+                <h3 className="text-xl font-bold text-slate-900 mb-5 tracking-tight">
+                  {item.title}
+                </h3>
+                <p className="text-slate-600 text-[15px] leading-relaxed font-normal">
+                  {item.description}
+                </p>
+              </div>
             </div>
             </FadeInSection>
           ))}
