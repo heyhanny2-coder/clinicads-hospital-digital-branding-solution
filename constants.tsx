@@ -177,7 +177,18 @@ export const PORTFOLIO: PortfolioItem[] = [
     review: '지역 검색에서 잘 노출되게 되었어요. 콘텐츠 퀄리티 덕분에 신뢰도도 올랐어요.',
     imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop' 
   },
+  { 
+    id: '16', 
+    category: '한의원', 
+    title: '창명한의원', 
+    location: '서울',
+    review: '온라인 브랜딩으로 병원 인지도가 높아졌어요. 검색 노출과 예약이 함께 늘었습니다.',
+    imageUrl: 'https://images.unsplash.com/photo-1631815541542-e896f4795f70?q=80&w=800&auto=format&fit=crop' 
+  },
 ];
+
+/** 메인 페이지에 노출할 포트폴리오 (순서 유지) */
+export const FEATURED_PORTFOLIO_IDS = ['13', '14', '16'];
 
 export const CONTACT_INFO = {
   phone: '1670-0704',
