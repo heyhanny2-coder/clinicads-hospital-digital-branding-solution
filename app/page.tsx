@@ -3,6 +3,7 @@ import React from 'react';
 import Hero from '../components/Hero';
 import Problem from '../components/Problem';
 import Solution from '../components/Solution';
+import RealtimeInquiry from '../components/RealtimeInquiry';
 import Proof from '../components/Proof';
 import Services from '../components/Services';
 import Process from '../components/Process';
@@ -14,6 +15,7 @@ const Page: React.FC = () => {
       <Hero />
       <Problem />
       <Solution />
+      <RealtimeInquiry />
       <Proof />
       <Services />
       <Process />

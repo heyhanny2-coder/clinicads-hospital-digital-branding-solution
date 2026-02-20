@@ -192,6 +192,39 @@ export const CONTACT_INFO = {
   operatingHours: '오전 10:00 ~ 오후 6:00'
 };
 
+/** 2일에 1개 꼴로 랜덤 등록된 것처럼 보이는 실시간 문의 현황 데이터 */
+export const getInquiryActivity = (): { hospital: string; category: string; location: string; date: Date }[] => {
+  const hospitals = [
+    { hospital: 'OOO 치과', category: '치과', location: '강남구' },
+    { hospital: 'OOO 피부과', category: '피부과', location: '서초구' },
+    { hospital: 'OOO 정형외과', category: '정형외과', location: '마포구' },
+    { hospital: 'OOO 산부인과', category: '산부인과', location: '분당구' },
+    { hospital: 'OOO 척추의원', category: '척추', location: '수원시' },
+    { hospital: 'OOO 성형외과', category: '성형외과', location: '송파구' },
+    { hospital: 'OOO 한의원', category: '한의원', location: '인천' },
+    { hospital: 'OOO 내과', category: '내과', location: '대전' },
+    { hospital: 'OOO 피부과', category: '피부과', location: '부산' },
+    { hospital: 'OOO 치과', category: '치과', location: '광주' },
+    { hospital: 'OOO 한의원', category: '한의원', location: '성남시' },
+    { hospital: 'OOO 피부과', category: '피부과', location: '용산구' },
+    { hospital: 'OOO 정형외과', category: '정형외과', location: '동대문구' },
+    { hospital: 'OOO 치과', category: '치과', location: '강서구' },
+    { hospital: 'OOO 안과', category: '안과', location: '노원구' },
+  ];
+  const shuffled = [...hospitals].sort(() => Math.random() - 0.5);
+  const now = new Date();
+  let totalDaysAgo = 0;
+  const result = shuffled.map((h) => {
+    const gap = Math.floor(Math.random() * 6) + 1;
+    totalDaysAgo += gap;
+    const d = new Date(now);
+    d.setDate(d.getDate() - totalDaysAgo);
+    d.setHours(9 + Math.floor(Math.random() * 8), Math.floor(Math.random() * 60));
+    return { ...h, date: d };
+  });
+  return result.sort((a, b) => b.date.getTime() - a.date.getTime());
+};
+
 export const PAIN_POINTS = [
   { title: '의료법이 두렵다', description: '선전·과대광고 금지 때문에 뭘 해도 되고 안 되는지 모르겠다.', imageUrl: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=400&auto=format&fit=crop' },
   { title: '채널이 각자 논다', description: '블로그, 플레이스, 인스타가 따로 놀아 시너지가 전혀 안 난다.', imageUrl: 'https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=400&auto=format&fit=crop' },
