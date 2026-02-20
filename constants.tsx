@@ -192,6 +192,25 @@ export const CONTACT_INFO = {
   operatingHours: '오전 10:00 ~ 오후 6:00'
 };
 
+const TYPO_VARIANTS: Record<string, string[]> = {
+  'OOO 치과': ['OOO치과', 'OOO 치고ㅓ', 'OOO ㅊ과'],
+  'OOO 피부과': ['OOO부과', 'OOO ㅍ부과', 'OOO 피부고ㅏ'],
+  'OOO 정형외과': ['OOO정형외과', 'OOO 정형외고ㅏ'],
+  'OOO 산부인과': ['OOO 산부인고ㅏ', 'OOO산부인과'],
+  'OOO 척추의원': ['OOO 척쵸의원', 'OOO 척추의원ㅇ'],
+  'OOO 성형외과': ['OOO 성형외고ㅏ', 'OOO성형외과'],
+  'OOO 한의원': ['OOO 한의원ㅇ', 'OOO 한의고ㅓ', 'OOO한의원'],
+  'OOO 내과': ['OOO 내고ㅏ', 'OOO내과'],
+  'OOO 안과': ['OOO ㅇ안과', 'OOO 안고ㅏ'],
+};
+
+const maybeTypo = (hospital: string): string => {
+  if (Math.random() > 0.35) return hospital;
+  const variants = TYPO_VARIANTS[hospital];
+  if (!variants) return hospital;
+  return variants[Math.floor(Math.random() * variants.length)];
+};
+
 /** 2일에 1개 꼴로 랜덤 등록된 것처럼 보이는 실시간 문의 현황 데이터 */
 export const getInquiryActivity = (): { hospital: string; category: string; location: string; date: Date }[] => {
   const hospitals = [
@@ -220,7 +239,7 @@ export const getInquiryActivity = (): { hospital: string; category: string; loca
     const d = new Date(now);
     d.setDate(d.getDate() - totalDaysAgo);
     d.setHours(9 + Math.floor(Math.random() * 8), Math.floor(Math.random() * 60));
-    return { ...h, date: d };
+    return { ...h, hospital: maybeTypo(h.hospital), date: d };
   });
   return result.sort((a, b) => b.date.getTime() - a.date.getTime());
 };
