@@ -61,6 +61,16 @@
       .animate-marquee {
         animation: marquee 25s linear infinite;
       }
+      @keyframes marqueeUp {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-50%); }
+      }
+      .animate-marquee-up {
+        animation: marqueeUp 45s linear infinite;
+      }
+      .marquee-up-container:hover .animate-marquee-up {
+        animation-play-state: paused;
+      }
       .marquee-container:hover .animate-marquee {
         animation-play-state: paused;
       }
