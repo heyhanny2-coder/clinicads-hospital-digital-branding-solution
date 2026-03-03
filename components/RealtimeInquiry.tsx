@@ -79,7 +79,7 @@ const RealtimeInquiry: React.FC = () => {
         </FadeInSection>
 
         <div className="max-w-2xl mx-auto">
-          <div className="marquee-up-container h-[200px] overflow-hidden rounded-2xl bg-white/80 backdrop-blur-sm border border-brand-rose shadow-sm">
+          <div className="marquee-up-container h-[200px] overflow-hidden rounded-2xl bg-white/80 backdrop-blur-sm border border-brand-rose shadow-sm hover:shadow-xl hover:border-brand-lavender transition-all duration-300">
             <div className="animate-marquee-up flex flex-col">
               {[...inquiries, ...inquiries].map((item, i) => (
                 <InquiryRow

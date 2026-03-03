@@ -39,7 +39,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                 href={link.path}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`text-[12px] font-bold tracking-[0.1em] transition-colors ${logoLight ? 'text-slate-300 hover:text-white' : 'text-brand-navy/80 hover:text-brand-navy'}`}
+                className={`text-[12px] font-bold tracking-[0.1em] transition-all duration-300 ${logoLight ? 'text-slate-300 hover:text-white hover:scale-105' : 'text-brand-navy/80 hover:text-brand-navy hover:scale-105'}`}
               >
                 {link.name}
               </a>
@@ -47,7 +47,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
               <Link
                 key={link.name}
                 to={link.path}
-                className={`text-[12px] font-bold tracking-[0.1em] transition-colors ${
+                className={`text-[12px] font-bold tracking-[0.1em] transition-all duration-300 hover:scale-105 ${
                   logoLight
                     ? (location.pathname === link.path ? 'text-brand-lavender' : 'text-slate-300 hover:text-white')
                     : (location.pathname === link.path ? 'text-brand-navy' : 'text-brand-navy/80 hover:text-brand-navy')
@@ -59,8 +59,8 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
           ))}
           <Link
             to="/contact"
-            className={`px-6 py-2.5 rounded-full text-[12px] font-bold tracking-widest transition-all ${
-              logoLight ? 'bg-white/20 hover:bg-white/30 text-white border border-white/30' : 'bg-brand-navy hover:bg-brand-navy/90 text-white shadow-lg shadow-brand-lavender/30'
+            className={`px-6 py-2.5 rounded-full text-[12px] font-bold tracking-widest transition-all duration-300 hover:scale-105 ${
+              logoLight ? 'bg-white/20 hover:bg-white/30 text-white border border-white/30' : 'bg-brand-navy hover:bg-brand-navy/90 text-white shadow-lg shadow-brand-lavender/30 hover:shadow-xl'
             }`}
           >
             무료 진단 받기

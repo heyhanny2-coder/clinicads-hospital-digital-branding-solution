@@ -21,12 +21,12 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-brand-navy font-bold text-xs tracking-widest uppercase mb-6">SERVICES</h4>
             <ul className="space-y-4 text-[13px] text-brand-navy/80 font-normal">
-              <li>네이버 플레이스 최적화</li>
-              <li>브랜드 블로그 운영</li>
-              <li>리뷰·지식인 관리</li>
-              <li>병원 전문 SNS 마케팅</li>
-              <li>홈페이지 제작</li>
-              <li>영상 제작·촬영</li>
+              <li className="hover:text-brand-lavender transition-colors cursor-default">네이버 플레이스 최적화</li>
+              <li className="hover:text-brand-lavender transition-colors cursor-default">브랜드 블로그 운영</li>
+              <li className="hover:text-brand-lavender transition-colors cursor-default">리뷰·지식인 관리</li>
+              <li className="hover:text-brand-lavender transition-colors cursor-default">병원 전문 SNS 마케팅</li>
+              <li className="hover:text-brand-lavender transition-colors cursor-default">홈페이지 제작</li>
+              <li className="hover:text-brand-lavender transition-colors cursor-default">영상 제작·촬영</li>
             </ul>
           </div>
 
@@ -53,8 +53,8 @@ const Footer: React.FC = () => {
         <div className="pt-12 border-t border-brand-rose flex flex-col md:flex-row justify-between items-center gap-6 text-brand-navy/80 text-[10px] uppercase tracking-[0.2em] font-medium">
           <p>© 2025 CLINICADS. ALL RIGHTS RESERVED.</p>
           <div className="flex gap-8">
-            <a href="#" className="hover:text-brand-navy transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-brand-navy transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-brand-lavender transition-colors duration-300">Privacy Policy</a>
+            <a href="#" className="hover:text-brand-lavender transition-colors duration-300">Terms of Service</a>
           </div>
         </div>
       </div>

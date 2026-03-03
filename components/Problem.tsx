@@ -51,17 +51,17 @@ const Problem: React.FC = () => {
           {PAIN_POINTS.map((item, index) => (
             <FadeInSection key={index} delay={index * 80}>
             <div
-              className="overflow-hidden bg-white border border-brand-rose rounded-2xl shadow-sm hover:shadow-md hover:border-brand-lavender hover:-translate-y-1 transition-all duration-300"
+              className="card-shimmer overflow-hidden bg-white border border-brand-rose rounded-2xl shadow-sm hover:shadow-xl hover:border-brand-lavender hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 group/card"
             >
               <div className="h-32 overflow-hidden">
                 <img
                   src={item.imageUrl}
                   alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-110"
                 />
               </div>
               <div className="px-8 py-11">
-                <span className="text-2xl font-black text-brand-navy/80 block mb-6 font-serif italic">
+                <span className="text-2xl font-black text-brand-navy/80 block mb-6 font-serif italic group-hover/card:text-brand-lavender transition-colors duration-300">
                   0{index + 1}
                 </span>
                 <h3 className="text-xl font-bold text-brand-navy mb-5 tracking-tight">

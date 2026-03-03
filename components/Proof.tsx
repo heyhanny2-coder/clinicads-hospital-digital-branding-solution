@@ -42,7 +42,7 @@ const Proof: React.FC = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6 text-center">
           {stats.map((stat, i) => (
             <FadeInSection key={i} delay={i * 100}>
-            <div className="p-4 rounded-xl bg-white/50 backdrop-blur-sm border border-white/60 hover:bg-white/80 hover:shadow-lg transition-all duration-300">
+            <div className="p-4 rounded-xl bg-white/50 backdrop-blur-sm border border-white/60 hover:bg-white/80 hover:shadow-xl hover:scale-105 hover:-translate-y-1 transition-all duration-300">
               <p className="text-2xl md:text-3xl font-extrabold text-brand-navy mb-2 font-serif italic">
                 <span className="text-gradient-brand">{stat.value}</span>
               </p>
@@ -67,7 +67,7 @@ const Proof: React.FC = () => {
         </h2>
           <Link
             to="/portfolio"
-            className="inline-flex items-center gap-3 text-brand-navy font-semibold text-base tracking-[0.15em] uppercase group hover:text-brand-navy/90"
+            className="link-underline-expand inline-flex items-center gap-3 text-brand-navy font-semibold text-base tracking-[0.15em] uppercase group hover:text-brand-navy/90"
           >
             전체 포트폴리오 보기
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />

@@ -43,14 +43,15 @@ const Process: React.FC = () => {
         </p>
       </div>
 
-      <div className="max-w-3xl mx-auto">
-        <div className="space-y-20">
+      <div className="max-w-3xl mx-auto relative">
+        <div className="absolute left-8 top-16 bottom-16 w-0.5 border-l-2 border-dashed border-brand-lavender/25 hidden md:block" />
+        <div className="space-y-20 relative">
           {PROCESS_STEPS.map((step, index) => (
             <FadeInSection key={index} delay={index * 80}>
             <div
-              className="flex gap-12 md:gap-20 items-start"
+              className="flex gap-12 md:gap-20 items-start group/step"
             >
-              <div className="flex-shrink-0 w-16 h-16 rounded-full bg-white border-2 border-brand-rose flex items-center justify-center text-xl font-extrabold text-brand-navy shadow-sm group-hover:border-brand-lavender group-hover:bg-brand-light transition-colors">
+              <div className="step-pulse flex-shrink-0 w-16 h-16 rounded-full bg-white border-2 border-brand-rose flex items-center justify-center text-xl font-extrabold text-brand-navy shadow-sm group-hover/step:border-brand-lavender group-hover/step:bg-brand-light group-hover/step:scale-110 transition-all duration-300">
                 {step.step}
               </div>
               <div className="pt-2">

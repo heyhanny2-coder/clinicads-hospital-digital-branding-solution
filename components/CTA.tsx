@@ -42,14 +42,19 @@ const CTA: React.FC = () => {
         플레이스·키워드 현황을 <span className="text-highlight-strong">무료로 진단</span>해 드립니다.<br />
         비용 부담 없이, 당신의 병원이 할 수 있는 것을 먼저 보여드립니다.
       </p>
-      <p className="text-sm text-brand-navy/80 font-medium mb-16">
-        ✓ 비밀 유지  ✓ 상담만 받고 거절해도 됩니다
+      <p className="text-sm text-brand-navy/80 font-medium mb-16 flex flex-wrap justify-center gap-x-6 gap-y-1">
+        <span className="flex items-center gap-1.5 hover:text-brand-lavender transition-colors cursor-default">
+          <span className="text-brand-lavender">✓</span> 비밀 유지
+        </span>
+        <span className="flex items-center gap-1.5 hover:text-brand-lavender transition-colors cursor-default">
+          <span className="text-brand-lavender">✓</span> 상담만 받고 거절해도 됩니다
+        </span>
       </p>
 
       <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
           <Link
             to="/contact"
-            className="w-full sm:w-auto bg-brand-navy hover:bg-brand-navy/90 text-white px-16 py-6 rounded-full text-sm font-semibold tracking-[0.15em] uppercase transition-all duration-300 shadow-lg shadow-brand-lavender/30 hover:shadow-xl hover:-translate-y-0.5"
+            className="btn-shine w-full sm:w-auto bg-brand-navy hover:bg-brand-navy/90 text-white px-16 py-6 rounded-full text-sm font-semibold tracking-[0.15em] uppercase transition-all duration-300 shadow-lg shadow-brand-lavender/30 hover:shadow-xl hover:-translate-y-1 hover:scale-105"
           >
             무료 진단 신청 (선택 사항 없음)
           </Link>
@@ -57,7 +62,7 @@ const CTA: React.FC = () => {
           href="https://clickadzcount.vercel.app/"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full sm:w-auto bg-white hover:bg-slate-50 text-brand-navy border border-brand-rose px-16 py-6 rounded-full text-sm font-semibold tracking-[0.15em] uppercase transition-all duration-300"
+          className="btn-shine w-full sm:w-auto bg-white hover:bg-slate-50 text-brand-navy border border-brand-rose px-16 py-6 rounded-full text-sm font-semibold tracking-[0.15em] uppercase transition-all duration-300 hover:border-brand-lavender hover:-translate-y-0.5"
         >
           맞춤 견적 받아보기
         </a>
@@ -65,7 +70,7 @@ const CTA: React.FC = () => {
           href={CONTACT_INFO.kakao}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full sm:w-auto bg-white hover:bg-slate-50 text-brand-navy border border-brand-rose px-16 py-6 rounded-full text-sm font-semibold tracking-[0.15em] uppercase transition-all duration-300"
+          className="btn-shine w-full sm:w-auto bg-white hover:bg-slate-50 text-brand-navy border border-brand-rose px-16 py-6 rounded-full text-sm font-semibold tracking-[0.15em] uppercase transition-all duration-300 hover:border-brand-lavender hover:-translate-y-0.5"
         >
           카카오톡 빠른 상담
         </a>

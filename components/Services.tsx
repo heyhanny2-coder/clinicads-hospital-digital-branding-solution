@@ -50,8 +50,8 @@ const Services: React.FC = () => {
               const Icon = (LucideIcons as Record<string, React.ComponentType<{ size?: number }>>)[service.icon] || LucideIcons.PenTool;
               return (
                 <FadeInSection key={service.id} delay={i * 80}>
-                  <div className="h-full flex flex-col p-8 md:p-10 bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-lg hover:border-brand-lavender/50 hover:-translate-y-0.5 transition-all duration-300 group">
-                    <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-slate-50 text-brand-navy mb-6 group-hover:bg-brand-lavender/20 transition-colors">
+                  <div className="card-shimmer h-full flex flex-col p-8 md:p-10 bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-xl hover:border-brand-lavender/50 hover:-translate-y-2 transition-all duration-300 group">
+                    <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-slate-50 text-brand-navy mb-6 group-hover:bg-brand-lavender/20 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
                       <Icon size={24} />
                     </div>
                     <h3 className="text-lg md:text-xl font-bold text-brand-navy mb-3 tracking-tight">
@@ -77,7 +77,7 @@ const Services: React.FC = () => {
           <div className="text-center mt-16">
             <Link
               to="/services"
-              className="inline-block text-brand-navy font-semibold text-sm tracking-[0.15em] uppercase border-b-2 border-brand-navy pb-2 hover:text-brand-navy/90 transition-colors"
+              className="link-underline-expand inline-block text-brand-navy font-semibold text-sm tracking-[0.15em] uppercase border-b-2 border-brand-navy pb-2 hover:text-brand-navy/90 transition-colors"
             >
               전체 서비스 보기
             </Link>

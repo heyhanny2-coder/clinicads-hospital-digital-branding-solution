@@ -111,14 +111,14 @@ const Hero: React.FC = () => {
             <span className="text-highlight">병·의원 전용</span> 디지털 브랜딩 솔루션
           </p>
           <p key={phraseIndex} className="mt-4 text-sm font-medium text-brand-lavender min-h-[24px] animate-fade-in">
-            {ROTATING_PHRASES[phraseIndex]}
+            <span className="typing-cursor">{ROTATING_PHRASES[phraseIndex]}</span>
           </p>
         </div>
 
         <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-16 animate-slide-up" style={{ animationDelay: '450ms', animationFillMode: 'both' }}>
           <Link
             to="/contact"
-            className="group/btn w-full sm:w-auto bg-brand-navy hover:bg-brand-navy/90 text-white px-14 py-6 rounded-full text-sm font-semibold tracking-[0.15em] uppercase transition-all duration-300 shadow-lg shadow-brand-lavender/30 hover:shadow-brand-lavender/50 hover:-translate-y-0.5 hover:scale-105 active:scale-100 relative overflow-hidden animate-glow-pulse"
+            className="group/btn btn-shine w-full sm:w-auto bg-brand-navy hover:bg-brand-navy/90 text-white px-14 py-6 rounded-full text-sm font-semibold tracking-[0.15em] uppercase transition-all duration-300 shadow-lg shadow-brand-lavender/30 hover:shadow-brand-lavender/50 hover:-translate-y-0.5 hover:scale-105 active:scale-100 relative overflow-hidden animate-glow-pulse"
           >
             <span className="relative z-10">무료 진단 받기</span>
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700" />
@@ -135,13 +135,13 @@ const Hero: React.FC = () => {
 
         {/* 신뢰 지표 줄 */}
         <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-brand-navy/70 text-sm animate-slide-up" style={{ animationDelay: '550ms', animationFillMode: 'both' }}>
-          <span className="flex items-center gap-1.5">
+          <span className="flex items-center gap-1.5 hover:text-brand-lavender transition-colors cursor-default">
             <span className="inline-block w-1.5 h-1.5 rounded-full bg-brand-lavender animate-pulse" /> 무료 진단
           </span>
-          <span className="flex items-center gap-1.5">
+          <span className="flex items-center gap-1.5 hover:text-brand-lavender transition-colors cursor-default">
             <span className="inline-block w-1.5 h-1.5 rounded-full bg-brand-lavender animate-pulse" style={{ animationDelay: '0.5s' }} /> 의료법 100% 준수
           </span>
-          <span className="flex items-center gap-1.5">
+          <span className="flex items-center gap-1.5 hover:text-brand-lavender transition-colors cursor-default">
             <span className="inline-block w-1.5 h-1.5 rounded-full bg-brand-lavender animate-pulse" style={{ animationDelay: '1s' }} /> 95% 재계약율
           </span>
         </div>

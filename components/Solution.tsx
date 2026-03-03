@@ -52,7 +52,7 @@ const Solution: React.FC = () => {
         </p>
         <Link
           to="/services"
-          className="inline-block text-brand-navy font-semibold text-base tracking-[0.15em] uppercase border-b-2 border-brand-navy pb-2 hover:text-brand-navy/90 transition-colors"
+          className="link-underline-expand inline-block text-brand-navy font-semibold text-base tracking-[0.15em] uppercase border-b-2 border-brand-navy pb-2 hover:text-brand-navy/90 transition-colors"
         >
           서비스 자세히 보기
         </Link>
@@ -63,17 +63,17 @@ const Solution: React.FC = () => {
           {points.map((p, i) => (
             <FadeInSection key={p.id} delay={i * 80}>
             <div
-              className="overflow-hidden bg-slate-50 border border-brand-rose rounded-2xl shadow-sm hover:shadow-lg hover:bg-white hover:border-brand-lavender hover:-translate-y-1 transition-all duration-300"
+              className="card-shimmer overflow-hidden bg-slate-50 border border-brand-rose rounded-2xl shadow-sm hover:shadow-xl hover:bg-white hover:border-brand-lavender hover:-translate-y-2 transition-all duration-300 group/card"
             >
               <div className="h-20 overflow-hidden">
                 <img
                   src={p.imageUrl}
                   alt={p.title}
-                  className="w-full h-full object-cover opacity-90"
+                  className="w-full h-full object-cover opacity-90 transition-transform duration-500 group-hover/card:scale-110"
                 />
               </div>
               <div className="p-14 pt-8">
-              <span className="text-2xl font-black text-brand-navy/80 block mb-10 font-serif italic">
+              <span className="text-2xl font-black text-brand-navy/80 block mb-10 font-serif italic group-hover/card:text-brand-lavender transition-colors duration-300">
                 {p.id}
               </span>
               <h3 className="text-xl font-bold text-brand-navy mb-5 tracking-tight">
