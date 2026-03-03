@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getInquiryActivity } from '../constants';
 import Section from './Section';
 import FadeInSection from './FadeInSection';
-import { MapPin, Building2 } from 'lucide-react';
+import { MapPin, Building2, Zap, Clock, Activity } from 'lucide-react';
 
 const formatRelativeTime = (date: Date): string => {
   const now = new Date();
@@ -48,8 +48,21 @@ const RealtimeInquiry: React.FC = () => {
   return (
     <Section background="slate" padding="none" className="relative overflow-hidden py-14 md:py-16">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-[350px] h-[350px] bg-brand-lavender/20 rounded-full blur-[100px]" />
-        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-slate-200/20 rounded-full blur-[90px]" />
+        <div className="absolute top-0 right-0 w-[350px] h-[350px] bg-brand-lavender/20 rounded-full blur-[100px] animate-float" />
+        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-slate-200/20 rounded-full blur-[90px] animate-float-reverse" />
+        <div className="absolute top-[25%] left-[10%] opacity-20 animate-bounce-soft">
+          <Zap size={24} className="text-brand-lavender" />
+        </div>
+        <div className="absolute top-[45%] right-[8%] opacity-15 animate-pulse">
+          <Activity size={20} className="text-brand-navy" />
+        </div>
+        <div className="absolute bottom-[35%] left-[12%] opacity-20 animate-float" style={{ animationDelay: '1s' }}>
+          <Clock size={22} className="text-brand-rose" />
+        </div>
+        <div className="absolute bottom-[20%] right-[12%] opacity-15 animate-wiggle">
+          <Building2 size={18} className="text-brand-lavender" />
+        </div>
+        <div className="absolute top-[60%] right-[5%] w-2 h-2 rounded-full bg-brand-lavender/40 animate-bounce-soft" style={{ animationDelay: '0.5s' }} />
       </div>
       <div className="relative z-10">
         <FadeInSection>
@@ -59,7 +72,7 @@ const RealtimeInquiry: React.FC = () => {
               실시간
             </div>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-brand-navy leading-tight tracking-tight mb-2">
-              실시간 문의 현황
+              <span className="text-highlight-strong">실시간</span> 문의 현황
             </h2>
             <p className="text-brand-navy/80 text-sm">최근 상담 문의가 등록된 병원입니다.</p>
           </div>

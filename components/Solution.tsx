@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Lightbulb, Sparkles, CheckCircle } from 'lucide-react';
 import Section from './Section';
 import FadeInSection from './FadeInSection';
 
@@ -17,21 +18,37 @@ const Solution: React.FC = () => {
   return (
     <Section background="white" padding="large" className="relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-0 w-[450px] h-[450px] bg-brand-lavender/20 rounded-full blur-[130px]" />
-        <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-slate-200/20 rounded-full blur-[110px]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-brand-rose/15 rounded-full blur-[150px]" />
+        <div className="absolute top-1/4 left-0 w-[450px] h-[450px] bg-brand-lavender/20 rounded-full blur-[130px] animate-float" />
+        <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-slate-200/20 rounded-full blur-[110px] animate-float-reverse" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-brand-rose/15 rounded-full blur-[150px] animate-blob-pulse" />
+        <div className="absolute top-[15%] right-[12%] opacity-20 animate-bounce-soft">
+          <Lightbulb size={28} className="text-brand-lavender" />
+        </div>
+        <div className="absolute top-[35%] left-[8%] opacity-15 animate-float" style={{ animationDelay: '1.5s' }}>
+          <Sparkles size={22} className="text-brand-navy" />
+        </div>
+        <div className="absolute bottom-[35%] right-[10%] opacity-20 animate-wiggle">
+          <CheckCircle size={24} className="text-brand-lavender" />
+        </div>
+        <div className="absolute bottom-[25%] left-[15%] opacity-15 animate-float-reverse" style={{ animationDelay: '0.5s' }}>
+          <Lightbulb size={18} className="text-brand-rose" />
+        </div>
+        <div className="absolute top-[50%] right-[5%] w-4 h-4 rounded-full border-2 border-brand-lavender/25 animate-spin-slow" />
+        <div className="absolute bottom-[45%] left-[6%] w-2 h-2 rounded-full bg-brand-lavender/40 animate-bounce-soft" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(10,1,79,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(10,1,79,0.02)_1px,transparent_1px)] bg-[size:36px_36px]" />
       </div>
       <div className="relative z-10">
       <div className="max-w-3xl mx-auto text-center mb-28">
-        <p className="text-xs md:text-sm font-medium tracking-[0.3em] uppercase text-brand-navy mb-8">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-lavender/15 border border-brand-rose/50 text-brand-navy text-xs font-medium mb-8">
+          <Lightbulb size={12} className="text-brand-lavender" />
           Transformation
-        </p>
+        </div>
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-navy leading-tight tracking-tight mb-10">
-          광고비 지출에서<br />
-          <span className="text-brand-navy/80">신뢰 축적 구조로 전환하세요.</span>
+          <span className="text-highlight">광고비 지출</span>에서<br />
+          <span className="text-brand-navy/80"><span className="text-highlight-strong">신뢰 축적 구조</span>로 전환하세요.</span>
         </h2>
         <p className="text-brand-navy/80 text-base font-normal leading-relaxed mb-14">
-          ClinicAds는 단순 광고 대행이 아닙니다. 환자가 검색할 때 발견되고, 믿고, 예약하는—<strong className="text-brand-navy font-semibold">병원만의 신뢰 설계</strong>를 함께 만듭니다.
+          ClinicAds는 단순 광고 대행이 아닙니다. 환자가 검색할 때 발견되고, 믿고, 예약하는—<span className="text-highlight-strong">병원만의 신뢰 설계</span>를 함께 만듭니다.
         </p>
         <Link
           to="/services"

@@ -165,6 +165,31 @@
                     radial-gradient(at 0% 50%, rgba(248, 250, 252, 0.6) 0px, transparent 50%),
                     radial-gradient(at 80% 50%, rgba(10, 1, 79, 0.03) 0px, transparent 50%);
       }
+      /* 텍스트 강조 효과 */
+      .text-gradient-brand {
+        background: linear-gradient(135deg, #0A014F 0%, #CD9FCC 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .text-highlight {
+        background: linear-gradient(180deg, transparent 55%, rgba(205, 159, 204, 0.35) 55%, rgba(205, 159, 204, 0.35) 90%, transparent 90%);
+        padding: 0 0.15em;
+        font-weight: 700;
+      }
+      .text-highlight-strong {
+        background: linear-gradient(180deg, transparent 50%, rgba(205, 159, 204, 0.5) 50%, rgba(205, 159, 204, 0.5) 95%, transparent 95%);
+        padding: 0 0.2em;
+        font-weight: 800;
+      }
+      .text-emphasis {
+        color: #0A014F;
+        font-weight: 700;
+      }
+      .text-emphasis-lavender {
+        color: #CD9FCC;
+        font-weight: 700;
+      }
     </style>
   </head>
   <body>

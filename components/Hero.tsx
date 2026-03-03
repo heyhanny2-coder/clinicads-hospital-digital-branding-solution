@@ -90,7 +90,7 @@ const Hero: React.FC = () => {
           </p>
           <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-brand-lavender/20 text-brand-navy font-bold text-sm animate-float-up border border-brand-lavender/30">
             <Users size={16} />
-            120+ 병원
+            <span className="text-emphasis-lavender">120+ 병원</span>
           </span>
           <p className="text-xs md:text-sm font-medium tracking-[0.2em] text-brand-navy/80">
             이 선택한 의료 전문 마케팅
@@ -99,7 +99,7 @@ const Hero: React.FC = () => {
 
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-navy leading-[1.15] tracking-tight mb-12 animate-slide-up relative" style={{ animationDelay: '250ms', animationFillMode: 'both' }}>
           광고비가 아까우신 원장님,<br />
-          <span className="text-brand-navy/80">이제 신뢰가 쌓이는 구조로 바꾸세요.</span>
+          <span className="text-brand-navy/80">이제 <span className="text-highlight-strong">신뢰가 쌓이는 구조</span>로 바꾸세요.</span>
           <span className="absolute -top-1 -right-1 md:right-2 opacity-30 animate-bounce-soft hidden sm:block">
             <Sparkles size={28} className="text-brand-lavender" />
           </span>
@@ -107,8 +107,8 @@ const Hero: React.FC = () => {
 
         <div className="mb-12 animate-slide-up" style={{ animationDelay: '350ms', animationFillMode: 'both' }}>
           <p className="text-base md:text-lg text-brand-navy/80 font-normal max-w-[600px] mx-auto leading-relaxed">
-            검색에서 신뢰를 거쳐 예약까지—환자가 찾고, 믿고, 예약하는<br className="hidden md:block" />
-            병·의원 전용 디지털 브랜딩 솔루션
+            <span className="text-emphasis">검색 → 신뢰 → 예약</span>—환자가 찾고, 믿고, 예약하는<br className="hidden md:block" />
+            <span className="text-highlight">병·의원 전용</span> 디지털 브랜딩 솔루션
           </p>
           <p key={phraseIndex} className="mt-4 text-sm font-medium text-brand-lavender min-h-[24px] animate-fade-in">
             {ROTATING_PHRASES[phraseIndex]}

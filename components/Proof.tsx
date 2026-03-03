@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { PORTFOLIO, FEATURED_PORTFOLIO_IDS } from '../constants';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Trophy, Star, Award } from 'lucide-react';
 import Section from './Section';
 import FadeInSection from './FadeInSection';
 
@@ -17,10 +17,25 @@ const Proof: React.FC = () => {
   return (
     <Section background="blue" padding="none" className="relative overflow-hidden py-16 md:py-20">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[400px] bg-brand-lavender/25 rounded-full blur-[140px]" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-slate-200/30 rounded-full blur-[120px]" />
-        <div className="absolute top-1/2 left-0 w-[300px] h-[300px] bg-brand-rose/20 rounded-full blur-[100px]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[400px] bg-brand-lavender/25 rounded-full blur-[140px] animate-blob-pulse" />
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-slate-200/30 rounded-full blur-[120px] animate-float" />
+        <div className="absolute top-1/2 left-0 w-[300px] h-[300px] bg-brand-rose/20 rounded-full blur-[100px] animate-float-reverse" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.4)_0%,transparent_70%)]" />
+        <div className="absolute top-[20%] right-[15%] opacity-20 animate-bounce-soft">
+          <Trophy size={28} className="text-brand-lavender" />
+        </div>
+        <div className="absolute top-[40%] left-[10%] opacity-15 animate-float" style={{ animationDelay: '1s' }}>
+          <Star size={24} className="text-brand-lavender fill-brand-lavender/30" />
+        </div>
+        <div className="absolute bottom-[35%] right-[12%] opacity-20 animate-wiggle">
+          <Award size={22} className="text-brand-navy" />
+        </div>
+        <div className="absolute bottom-[25%] left-[15%] opacity-15 animate-float-reverse" style={{ animationDelay: '2s' }}>
+          <Star size={18} className="text-brand-rose" />
+        </div>
+        <div className="absolute top-[55%] left-[6%] w-3 h-3 rounded-full bg-brand-lavender/30 animate-bounce-soft" style={{ animationDelay: '0.5s' }} />
+        <div className="absolute bottom-[50%] right-[5%] w-4 h-4 rounded-full border-2 border-brand-lavender/20 animate-spin-slow" />
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(205,159,204,0.05)_1px,transparent_1px),linear-gradient(-135deg,rgba(205,159,204,0.05)_1px,transparent_1px)] bg-[size:24px_24px]" />
       </div>
       <div className="relative z-10">
       <div className="max-w-4xl mx-auto mb-10">
@@ -29,7 +44,7 @@ const Proof: React.FC = () => {
             <FadeInSection key={i} delay={i * 100}>
             <div className="p-4 rounded-xl bg-white/50 backdrop-blur-sm border border-white/60 hover:bg-white/80 hover:shadow-lg transition-all duration-300">
               <p className="text-2xl md:text-3xl font-extrabold text-brand-navy mb-2 font-serif italic">
-                {stat.value}
+                <span className="text-gradient-brand">{stat.value}</span>
               </p>
               <p className="text-xs font-medium tracking-[0.2em] uppercase text-brand-navy/80">
                 {stat.label}
@@ -42,12 +57,13 @@ const Proof: React.FC = () => {
 
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-8">
-        <p className="text-xs md:text-sm font-medium tracking-[0.3em] uppercase text-brand-navy mb-4">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/60 backdrop-blur-sm border border-brand-lavender/30 text-brand-navy text-xs font-medium mb-4">
+          <Trophy size={12} className="text-brand-lavender" />
           Trust & Results
-        </p>
+        </div>
         <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-brand-navy leading-tight tracking-tight mb-6">
-          이미 120곳의 병원이<br />
-          <span className="text-brand-navy/80">변화를 경험했습니다.</span>
+          이미 <span className="text-highlight-strong">120곳</span>의 병원이<br />
+          <span className="text-brand-navy/80"><span className="text-emphasis">변화</span>를 경험했습니다.</span>
         </h2>
           <Link
             to="/portfolio"
