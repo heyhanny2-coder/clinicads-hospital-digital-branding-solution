@@ -1,10 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { CONTACT_INFO } from '../constants';
-import { Shield, TrendingUp, Users, Search, Heart, Sparkles } from 'lucide-react';
+import { Shield, TrendingUp, Users, Search, Heart, Sparkles, PenTool, Layout, MessageSquare, Instagram, Globe, Video } from 'lucide-react';
 import Section from './Section';
 
 const ROTATING_PHRASES = ['신뢰가 쌓이는 병원', '검색에서 발견되는 병원', '환자가 찾는 병원'];
+
+const SERVICE_TAGS = [
+  { icon: PenTool, label: '검색·콘텐츠' },
+  { icon: Layout, label: '플레이스' },
+  { icon: MessageSquare, label: '리뷰' },
+  { icon: Instagram, label: 'SNS' },
+  { icon: Globe, label: '홈페이지' },
+  { icon: Video, label: '영상' },
+];
 
 const Hero: React.FC = () => {
   const [phraseIndex, setPhraseIndex] = useState(0);
@@ -23,13 +32,19 @@ const Hero: React.FC = () => {
     { icon: Users, text: '120+ 병원' },
   ];
 
+  const trustStats = [
+    { value: '120+', label: '병원' },
+    { value: '95%', label: '재계약' },
+    { value: '8년', label: '경력' },
+  ];
+
   return (
     <Section
       background="transparent"
       padding="none"
       containerSize="default"
       centered
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-40 md:pt-40 md:pb-48"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-32 md:pt-40 md:pb-40"
     >
       {/* 배경: 컬러풀 오브 + 메시 그라데이션 */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
@@ -64,92 +79,143 @@ const Hero: React.FC = () => {
         <div className="absolute top-[20%] left-[25%] opacity-10">
           <Heart size={16} className="text-brand-lavender animate-float" />
         </div>
+        {/* 추가 장식 도형 */}
+        <div className="absolute top-[10%] right-[20%] w-16 h-16 rounded-2xl border-2 border-brand-lavender/15 rotate-12 animate-float" style={{ animationDelay: '2s' }} />
+        <div className="absolute bottom-[20%] right-[25%] w-12 h-12 rounded-full bg-brand-rose/10 animate-float-reverse" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-[55%] left-[20%] w-20 h-20 rounded-3xl border border-brand-lavender/10 -rotate-6 animate-float" style={{ animationDelay: '0.5s' }} />
+        <div className="absolute top-[30%] right-[5%] w-24 h-24 rounded-full bg-gradient-to-br from-brand-lavender/10 to-transparent animate-blob-pulse" />
       </div>
 
-      <div className="relative z-10 max-w-[800px] mx-auto">
-        {/* 플로팅 배지 */}
-        <div className="flex flex-wrap justify-center gap-3 mb-10">
-          {badges.map((badge, i) => (
-            <span
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-4">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:gap-16">
+          {/* 메인 콘텐츠 */}
+          <div className="flex-1">
+            <div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-8">
+              {badges.map((badge, i) => (
+                <span
+                  key={i}
+                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm border border-brand-rose/80 shadow-sm text-brand-navy text-xs font-medium animate-scale-in hover:border-brand-lavender hover:shadow-md hover:scale-105 transition-all duration-300 cursor-default"
+                  style={{ animationDelay: `${i * 80}ms`, animationFillMode: 'both' }}
+                >
+                  {badge.icon && <badge.icon size={12} className="text-brand-navy" />}
+                  {badge.text}
+                </span>
+              ))}
+            </div>
+
+            <p className="text-[10px] md:text-xs font-medium tracking-[0.35em] uppercase text-brand-navy mb-5 animate-slide-up text-center lg:text-left" style={{ animationDelay: '200ms', animationFillMode: 'both' }}>
+              클리닉애즈 ClinicAds
+            </p>
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 mb-10 animate-slide-up" style={{ animationDelay: '220ms', animationFillMode: 'both' }}>
+              <p className="text-xs font-medium tracking-[0.2em] text-brand-navy/80">8년간</p>
+              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-brand-lavender/20 text-brand-navy font-bold text-xs animate-float-up border border-brand-lavender/30">
+                <Users size={14} />
+                <span className="text-emphasis-lavender">120+ 병원</span>
+              </span>
+              <p className="text-xs font-medium tracking-[0.2em] text-brand-navy/80">이 선택한 의료 전문 마케팅</p>
+            </div>
+
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-brand-navy leading-[1.35] tracking-tight mb-12 animate-slide-up relative text-center lg:text-left" style={{ animationDelay: '250ms', animationFillMode: 'both' }}>
+              광고비가 아까우신 원장님,<br />
+              <span className="text-brand-navy/80">이제 <span className="text-highlight-strong">신뢰가 쌓이는 구조</span>로 바꾸세요.</span>
+              <span className="absolute -top-1 -right-1 md:right-2 opacity-30 animate-bounce-soft hidden sm:block">
+                <Sparkles size={24} className="text-brand-lavender" />
+              </span>
+            </h1>
+
+            <div className="mb-12 animate-slide-up text-center lg:text-left" style={{ animationDelay: '350ms', animationFillMode: 'both' }}>
+              <p className="text-sm md:text-base text-brand-navy/80 font-normal max-w-[540px] mx-auto lg:mx-0 leading-loose">
+                <span className="text-emphasis">검색 → 신뢰 → 예약</span>—환자가 찾고, 믿고, 예약하는<br className="hidden md:block" />
+                <span className="text-highlight">병·의원 전용</span> 디지털 브랜딩 솔루션
+              </p>
+              <p key={phraseIndex} className="mt-5 text-sm font-bold text-slate-400 min-h-[22px] animate-fade-in">
+                <span className="typing-cursor">{ROTATING_PHRASES[phraseIndex]}</span>
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-14 animate-slide-up" style={{ animationDelay: '450ms', animationFillMode: 'both' }}>
+              <Link
+                to="/contact"
+                className="group/btn btn-shine w-full sm:w-auto bg-brand-navy hover:bg-brand-navy/90 text-white px-12 py-5 rounded-full text-sm font-semibold tracking-[0.15em] uppercase transition-all duration-300 shadow-lg shadow-brand-lavender/30 hover:shadow-brand-lavender/50 hover:-translate-y-0.5 hover:scale-105 active:scale-100 relative overflow-hidden animate-glow-pulse"
+              >
+                <span className="relative z-10">무료 진단 받기</span>
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700" />
+              </Link>
+              <a
+                href={CONTACT_INFO.kakao}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto bg-white hover:bg-slate-50 text-brand-navy border-2 border-brand-rose px-12 py-5 rounded-full text-sm font-semibold tracking-[0.15em] uppercase transition-all duration-300 hover:border-brand-lavender"
+              >
+                카카오톡 문의
+              </a>
+            </div>
+
+            {/* 신뢰 지표 + 서비스 태그 */}
+            <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-5 sm:gap-8 animate-slide-up pt-2" style={{ animationDelay: '550ms', animationFillMode: 'both' }}>
+              <div className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-brand-navy/70 text-xs">
+                <span className="flex items-center gap-1.5 hover:text-brand-lavender transition-colors cursor-default">
+                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-brand-lavender animate-pulse" /> 무료 진단
+                </span>
+                <span className="flex items-center gap-1.5 hover:text-brand-lavender transition-colors cursor-default">
+                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-brand-lavender animate-pulse" style={{ animationDelay: '0.5s' }} /> 의료법 100% 준수
+                </span>
+                <span className="flex items-center gap-1.5 hover:text-brand-lavender transition-colors cursor-default">
+                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-brand-lavender animate-pulse" style={{ animationDelay: '1s' }} /> 95% 재계약율
+                </span>
+              </div>
+              <div className="h-px sm:h-4 w-px sm:w-px bg-brand-rose/30 hidden sm:block" />
+              <div className="flex flex-wrap justify-center gap-3">
+                {SERVICE_TAGS.map((tag, i) => (
+                  <span
+                    key={i}
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/60 backdrop-blur-sm border border-brand-rose/40 text-brand-navy/80 text-[11px] font-medium hover:border-brand-lavender/50 hover:text-brand-navy hover:bg-white/80 transition-all duration-300 cursor-default"
+                  >
+                    <tag.icon size={10} className="text-brand-lavender flex-shrink-0" />
+                    {tag.label}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* 우측: 신뢰 지표 카드 (데스크톱) */}
+          <div className="hidden lg:flex flex-col gap-5 w-64 flex-shrink-0 mt-16 lg:mt-0">
+            {trustStats.map((stat, i) => (
+              <div
+                key={i}
+                className="animate-slide-up flex items-center gap-4 p-4 rounded-xl bg-white/80 backdrop-blur-sm border border-brand-rose/60 shadow-sm hover:shadow-md hover:border-brand-lavender/50 hover:-translate-x-1 transition-all duration-300"
+                style={{ animationDelay: `${600 + i * 80}ms`, animationFillMode: 'both' }}
+              >
+                <span className="text-2xl font-extrabold text-brand-navy font-serif italic text-gradient-brand">{stat.value}</span>
+                <span className="text-xs font-medium text-brand-navy/80 tracking-wide">{stat.label}</span>
+              </div>
+            ))}
+            <div className="animate-slide-up p-4 rounded-xl bg-brand-lavender/15 border border-brand-lavender/30" style={{ animationDelay: '900ms', animationFillMode: 'both' }}>
+              <p className="text-[11px] text-brand-navy/80 leading-relaxed">
+                검색·플레이스·리뷰·SNS를 하나의 브랜드로 연결합니다.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* 모바일: 신뢰 지표 카드 */}
+        <div className="lg:hidden flex justify-center gap-3 mt-14 animate-slide-up">
+          {trustStats.map((stat, i) => (
+            <div
               key={i}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-brand-rose/80 shadow-sm text-brand-navy text-sm font-medium animate-scale-in hover:border-brand-lavender hover:shadow-md hover:scale-110 hover:-rotate-1 transition-all duration-300 cursor-default"
-              style={{ animationDelay: `${i * 80}ms`, animationFillMode: 'both' }}
+              className="flex-1 max-w-[100px] flex flex-col items-center p-3 rounded-xl bg-white/80 backdrop-blur-sm border border-brand-rose/60 shadow-sm"
             >
-              {badge.icon && <badge.icon size={14} className="text-brand-navy" />}
-              {badge.text}
-            </span>
+              <span className="text-lg font-extrabold text-brand-navy font-serif italic text-gradient-brand">{stat.value}</span>
+              <span className="text-[10px] font-medium text-brand-navy/80 mt-0.5">{stat.label}</span>
+            </div>
           ))}
         </div>
-
-        <p className="text-xs md:text-sm font-medium tracking-[0.35em] uppercase text-brand-navy mb-4 animate-slide-up" style={{ animationDelay: '200ms', animationFillMode: 'both' }}>
-          클리닉애즈 ClinicAds
-        </p>
-        <div className="flex flex-wrap items-center justify-center gap-3 mb-8 animate-slide-up" style={{ animationDelay: '220ms', animationFillMode: 'both' }}>
-          <p className="text-xs md:text-sm font-medium tracking-[0.2em] text-brand-navy/80">
-            8년간
-          </p>
-          <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-brand-lavender/20 text-brand-navy font-bold text-sm animate-float-up border border-brand-lavender/30">
-            <Users size={16} />
-            <span className="text-emphasis-lavender">120+ 병원</span>
-          </span>
-          <p className="text-xs md:text-sm font-medium tracking-[0.2em] text-brand-navy/80">
-            이 선택한 의료 전문 마케팅
-          </p>
-        </div>
-
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-navy leading-[1.15] tracking-tight mb-12 animate-slide-up relative" style={{ animationDelay: '250ms', animationFillMode: 'both' }}>
-          광고비가 아까우신 원장님,<br />
-          <span className="text-brand-navy/80">이제 <span className="text-highlight-strong">신뢰가 쌓이는 구조</span>로 바꾸세요.</span>
-          <span className="absolute -top-1 -right-1 md:right-2 opacity-30 animate-bounce-soft hidden sm:block">
-            <Sparkles size={28} className="text-brand-lavender" />
-          </span>
-        </h1>
-
-        <div className="mb-12 animate-slide-up" style={{ animationDelay: '350ms', animationFillMode: 'both' }}>
-          <p className="text-base md:text-lg text-brand-navy/80 font-normal max-w-[600px] mx-auto leading-relaxed">
-            <span className="text-emphasis">검색 → 신뢰 → 예약</span>—환자가 찾고, 믿고, 예약하는<br className="hidden md:block" />
-            <span className="text-highlight">병·의원 전용</span> 디지털 브랜딩 솔루션
-          </p>
-          <p key={phraseIndex} className="mt-4 text-sm font-medium text-brand-lavender min-h-[24px] animate-fade-in">
-            <span className="typing-cursor">{ROTATING_PHRASES[phraseIndex]}</span>
-          </p>
-        </div>
-
-        <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-16 animate-slide-up" style={{ animationDelay: '450ms', animationFillMode: 'both' }}>
-          <Link
-            to="/contact"
-            className="group/btn btn-shine w-full sm:w-auto bg-brand-navy hover:bg-brand-navy/90 text-white px-14 py-6 rounded-full text-sm font-semibold tracking-[0.15em] uppercase transition-all duration-300 shadow-lg shadow-brand-lavender/30 hover:shadow-brand-lavender/50 hover:-translate-y-0.5 hover:scale-105 active:scale-100 relative overflow-hidden animate-glow-pulse"
-          >
-            <span className="relative z-10">무료 진단 받기</span>
-            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700" />
-          </Link>
-          <a
-            href={CONTACT_INFO.kakao}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto bg-white hover:bg-slate-50 text-brand-navy border-2 border-brand-rose px-14 py-6 rounded-full text-sm font-semibold tracking-[0.15em] uppercase transition-all duration-300 hover:border-brand-lavender"
-          >
-            카카오톡 문의
-          </a>
-        </div>
-
-        {/* 신뢰 지표 줄 */}
-        <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-brand-navy/70 text-sm animate-slide-up" style={{ animationDelay: '550ms', animationFillMode: 'both' }}>
-          <span className="flex items-center gap-1.5 hover:text-brand-lavender transition-colors cursor-default">
-            <span className="inline-block w-1.5 h-1.5 rounded-full bg-brand-lavender animate-pulse" /> 무료 진단
-          </span>
-          <span className="flex items-center gap-1.5 hover:text-brand-lavender transition-colors cursor-default">
-            <span className="inline-block w-1.5 h-1.5 rounded-full bg-brand-lavender animate-pulse" style={{ animationDelay: '0.5s' }} /> 의료법 100% 준수
-          </span>
-          <span className="flex items-center gap-1.5 hover:text-brand-lavender transition-colors cursor-default">
-            <span className="inline-block w-1.5 h-1.5 rounded-full bg-brand-lavender animate-pulse" style={{ animationDelay: '1s' }} /> 95% 재계약율
-          </span>
-        </div>
       </div>
 
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-50 pointer-events-none">
-        <span className="text-[10px] tracking-[0.25em] uppercase font-medium text-brand-navy/60">Scroll</span>
-        <div className="w-px h-16 bg-gradient-to-b from-brand-navy/50 to-transparent animate-pulse" />
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40 pointer-events-none">
+        <span className="text-[9px] tracking-[0.25em] uppercase font-medium text-brand-navy/60">Scroll</span>
+        <div className="w-px h-12 bg-gradient-to-b from-brand-navy/50 to-transparent animate-pulse" />
       </div>
     </Section>
   );
