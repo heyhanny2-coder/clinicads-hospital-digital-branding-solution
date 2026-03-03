@@ -17,7 +17,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col relative bg-[#0a0a0a]">
+    <div className="min-h-screen flex flex-col relative bg-white">
       <AnnouncementPopup />
       <Navbar isScrolled={isScrolled} />
       <main className="flex-grow">

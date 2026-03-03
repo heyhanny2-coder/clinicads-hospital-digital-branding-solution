@@ -216,7 +216,7 @@ const TYPO_VARIANTS: Record<string, string[]> = {
 };
 
 const maybeTypo = (hospital: string): string => {
-  if (Math.random() > 0.35) return hospital;
+  if (Math.random() > 0.12) return hospital;
   const variants = TYPO_VARIANTS[hospital];
   if (!variants) return hospital;
   return variants[Math.floor(Math.random() * variants.length)];

@@ -99,33 +99,33 @@ const ContactForm: React.FC<ContactFormProps> = ({ variant = 'light' }) => {
 
   const formStyles = {
     container: isLight
-      ? 'bg-white border border-slate-200 rounded-2xl p-8 md:p-12 shadow-sm'
-      : 'bg-white/[0.02] border border-white/10 rounded-3xl p-8 md:p-12',
-    label: isLight ? 'text-slate-600' : 'text-gray-400',
+      ? 'bg-white border border-brand-rose rounded-2xl p-8 md:p-12 shadow-sm'
+      : 'bg-white/[0.02] border border-white/10 rounded-2xl p-8 md:p-12',
+    label: isLight ? 'text-brand-navy/80' : 'text-gray-400',
     input: isLight
-      ? 'w-full bg-slate-50 border border-slate-200 rounded-xl px-5 py-4 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors'
-      : 'w-full bg-white/5 border border-white/10 rounded-lg px-5 py-4 text-white placeholder:text-gray-500 focus:outline-none focus:border-red-500 transition-colors',
+      ? 'w-full bg-brand-light border border-brand-rose rounded-2xl px-5 py-4 text-brand-navy placeholder:text-brand-navy/60 focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy transition-colors'
+      : 'w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white placeholder:text-gray-500 focus:outline-none focus:border-red-500 transition-colors',
     select: isLight
-      ? 'w-full bg-slate-50 border border-slate-200 rounded-xl px-5 py-4 text-slate-900 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors appearance-none'
-      : 'w-full bg-white/5 border border-white/10 rounded-lg px-5 py-4 text-white focus:outline-none focus:border-red-500 transition-colors appearance-none',
-    option: isLight ? 'bg-white text-slate-900' : 'bg-black text-white',
+      ? 'w-full bg-brand-light border border-brand-rose rounded-2xl px-5 py-4 text-brand-navy focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy transition-colors appearance-none'
+      : 'w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white focus:outline-none focus:border-red-500 transition-colors appearance-none',
+    option: isLight ? 'bg-white text-brand-navy' : 'bg-black text-white',
     button: isLight
-      ? 'w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 disabled:opacity-50 text-white font-bold text-base py-6 rounded-xl transition-all flex items-center justify-center gap-3'
-      : 'w-full bg-red-600 hover:bg-red-700 disabled:bg-red-800 disabled:opacity-50 text-white font-black text-xl py-6 rounded-xl transition-all flex items-center justify-center gap-3 transform hover:-translate-y-1 shadow-2xl',
-    footer: isLight ? 'text-slate-500' : 'text-gray-600',
+      ? 'w-full bg-brand-navy hover:bg-brand-navy/90 disabled:bg-brand-navy/50 disabled:opacity-50 text-white font-bold text-base py-6 rounded-2xl transition-all flex items-center justify-center gap-3'
+      : 'w-full bg-red-600 hover:bg-red-700 disabled:bg-red-800 disabled:opacity-50 text-white font-black text-xl py-6 rounded-2xl transition-all flex items-center justify-center gap-3 transform hover:-translate-y-1 shadow-2xl',
+    footer: isLight ? 'text-brand-navy/70' : 'text-gray-600',
   };
 
   if (submitted) {
     return (
-      <div className={isLight ? 'bg-blue-50 border border-blue-100 rounded-2xl p-12 text-center animate-fade-in' : 'bg-white/5 border border-white/10 rounded-3xl p-12 text-center animate-fade-in'}>
-        <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 ${isLight ? 'bg-blue-100 text-blue-600' : 'bg-green-500/20 text-green-500'}`}>
+      <div className={isLight ? 'bg-brand-light border border-brand-rose rounded-2xl p-12 text-center animate-fade-in' : 'bg-white/5 border border-white/10 rounded-2xl p-12 text-center animate-fade-in'}>
+        <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 ${isLight ? 'bg-brand-pink text-brand-navy' : 'bg-green-500/20 text-green-500'}`}>
           <CheckCircle size={36} />
         </div>
-        <h3 className={`text-2xl font-bold mb-4 ${isLight ? 'text-slate-900' : 'text-white'}`}>상담 신청이 완료되었습니다!</h3>
-        <p className={isLight ? 'text-slate-600 mb-8' : 'text-gray-400 mb-8'}>전문 마케팅 컨설턴트가 영업일 기준 24시간 이내에 연락드리겠습니다.</p>
+        <h3 className={`text-2xl font-bold mb-4 ${isLight ? 'text-brand-navy' : 'text-white'}`}>상담 신청이 완료되었습니다!</h3>
+        <p className={isLight ? 'text-brand-navy/80 mb-8' : 'text-gray-400 mb-8'}>전문 마케팅 컨설턴트가 영업일 기준 24시간 이내에 연락드리겠습니다.</p>
         <button
           onClick={() => setSubmitted(false)}
-          className={isLight ? 'text-blue-600 font-bold hover:text-blue-700 hover:underline' : 'text-red-500 font-bold hover:underline'}
+          className={isLight ? 'text-brand-navy font-bold hover:text-brand-navy/90 hover:underline' : 'text-red-500 font-bold hover:underline'}
         >
           돌아가기
         </button>
@@ -137,12 +137,12 @@ const ContactForm: React.FC<ContactFormProps> = ({ variant = 'light' }) => {
     <div className={formStyles.container}>
       <form onSubmit={handleSubmit} className="space-y-6">
         {errorMessage && (
-          <div ref={errorRef} className={`p-4 rounded-xl text-sm ${isLight ? 'bg-amber-50 text-amber-800 border border-amber-200' : 'bg-amber-500/10 text-amber-400 border border-amber-500/20'}`}>
+          <div ref={errorRef} className={`p-4 rounded-2xl text-sm ${isLight ? 'bg-amber-50 text-amber-800 border border-amber-200' : 'bg-amber-500/10 text-amber-400 border border-amber-500/20'}`}>
             <p className="font-medium mb-3">{errorMessage}</p>
             {mailtoFallback && (
               <a
                 href={mailtoLink}
-                className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg font-bold text-sm transition-colors ${isLight ? 'bg-blue-600 hover:bg-blue-700 text-white' : 'bg-white/20 hover:bg-white/30 text-white'}`}
+                className={`inline-flex items-center gap-2 px-4 py-2 rounded-full font-bold text-sm transition-colors ${isLight ? 'bg-brand-navy hover:bg-brand-navy/90 text-white' : 'bg-white/20 hover:bg-white/30 text-white'}`}
               >
                 이메일로 직접 문의하기
               </a>

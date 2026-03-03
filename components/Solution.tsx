@@ -17,25 +17,25 @@ const Solution: React.FC = () => {
   return (
     <Section background="white" padding="large" className="relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-0 w-[450px] h-[450px] bg-cyan-300/15 rounded-full blur-[130px]" />
-        <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-amber-300/12 rounded-full blur-[110px]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-teal-200/10 rounded-full blur-[150px]" />
+        <div className="absolute top-1/4 left-0 w-[450px] h-[450px] bg-brand-lavender/20 rounded-full blur-[130px]" />
+        <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-slate-200/20 rounded-full blur-[110px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-brand-rose/15 rounded-full blur-[150px]" />
       </div>
       <div className="relative z-10">
       <div className="max-w-3xl mx-auto text-center mb-28">
-        <p className="text-xs md:text-sm font-medium tracking-[0.3em] uppercase text-blue-600 mb-8">
+        <p className="text-xs md:text-sm font-medium tracking-[0.3em] uppercase text-brand-navy mb-8">
           Transformation
         </p>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight tracking-tight mb-10">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-navy leading-tight tracking-tight mb-10">
           광고비 지출에서<br />
-          <span className="text-slate-600">신뢰 축적 구조로 전환하세요.</span>
+          <span className="text-brand-navy/80">신뢰 축적 구조로 전환하세요.</span>
         </h2>
-        <p className="text-slate-600 text-base font-normal leading-relaxed mb-14">
-          ClinicAds는 단순 광고 대행이 아닙니다. 환자가 검색할 때 발견되고, 믿고, 예약하는—<strong className="text-slate-700 font-semibold">병원만의 신뢰 설계</strong>를 함께 만듭니다.
+        <p className="text-brand-navy/80 text-base font-normal leading-relaxed mb-14">
+          ClinicAds는 단순 광고 대행이 아닙니다. 환자가 검색할 때 발견되고, 믿고, 예약하는—<strong className="text-brand-navy font-semibold">병원만의 신뢰 설계</strong>를 함께 만듭니다.
         </p>
         <Link
           to="/services"
-          className="inline-block text-blue-600 font-semibold text-base tracking-[0.15em] uppercase border-b-2 border-blue-600 pb-2 hover:text-blue-700 transition-colors"
+          className="inline-block text-brand-navy font-semibold text-base tracking-[0.15em] uppercase border-b-2 border-brand-navy pb-2 hover:text-brand-navy/90 transition-colors"
         >
           서비스 자세히 보기
         </Link>
@@ -46,7 +46,7 @@ const Solution: React.FC = () => {
           {points.map((p, i) => (
             <FadeInSection key={p.id} delay={i * 80}>
             <div
-              className="overflow-hidden bg-slate-50 border border-slate-200 rounded-2xl shadow-sm hover:shadow-lg hover:bg-white hover:border-blue-200 hover:-translate-y-1 transition-all duration-300"
+              className="overflow-hidden bg-slate-50 border border-brand-rose rounded-2xl shadow-sm hover:shadow-lg hover:bg-white hover:border-brand-lavender hover:-translate-y-1 transition-all duration-300"
             >
               <div className="h-20 overflow-hidden">
                 <img
@@ -56,13 +56,13 @@ const Solution: React.FC = () => {
                 />
               </div>
               <div className="p-14 pt-8">
-              <span className="text-2xl font-black text-blue-600/80 block mb-10 font-serif italic">
+              <span className="text-2xl font-black text-brand-navy/80 block mb-10 font-serif italic">
                 {p.id}
               </span>
-              <h3 className="text-xl font-bold text-slate-900 mb-5 tracking-tight">
+              <h3 className="text-xl font-bold text-brand-navy mb-5 tracking-tight">
                 {p.title}
               </h3>
-              <p className="text-slate-600 text-[15px] leading-relaxed font-normal">
+              <p className="text-brand-navy/80 text-[15px] leading-relaxed font-normal">
                 {p.text}
               </p>
               </div>

@@ -6,6 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ClinicAds | 병원 마케팅, 이제 광고 말고 구조로 합니다</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                light: '#FAE8EB',
+                pink: '#F6CACA',
+                rose: '#E4C2C6',
+                lavender: '#CD9FCC',
+                navy: '#0A014F',
+              }
+            }
+          }
+        }
+      }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
@@ -13,7 +30,7 @@
       body {
         font-family: 'Noto Sans KR', sans-serif;
         background-color: #ffffff;
-        color: #0f172a;
+        color: #0A014F;
       }
       .font-serif {
         font-family: 'Playfair Display', serif;
@@ -117,11 +134,36 @@
       }
       .animate-gradient-flow { animation: gradientFlow 12s ease-in-out infinite; }
       .animate-blob-pulse { animation: blobPulse 8s ease-in-out infinite; }
+      @keyframes bounce-soft {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+      }
+      @keyframes spin-slow {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      @keyframes wiggle {
+        0%, 100% { transform: rotate(-3deg); }
+        50% { transform: rotate(3deg); }
+      }
+      .animate-bounce-soft { animation: bounce-soft 3s ease-in-out infinite; }
+      .animate-spin-slow { animation: spin-slow 20s linear infinite; }
+      .animate-wiggle { animation: wiggle 4s ease-in-out infinite; }
+      @keyframes float-up {
+        0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
+        50% { transform: translateY(-20px) scale(1.1); opacity: 1; }
+      }
+      @keyframes glow-pulse {
+        0%, 100% { box-shadow: 0 0 20px rgba(205, 159, 204, 0.2); }
+        50% { box-shadow: 0 0 40px rgba(205, 159, 204, 0.35); }
+      }
+      .animate-float-up { animation: float-up 4s ease-in-out infinite; }
+      .animate-glow-pulse { animation: glow-pulse 3s ease-in-out infinite; }
       .bg-mesh-gradient {
-        background: radial-gradient(at 40% 20%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
-                    radial-gradient(at 80% 0%, rgba(251, 191, 36, 0.12) 0px, transparent 50%),
-                    radial-gradient(at 0% 50%, rgba(34, 211, 238, 0.1) 0px, transparent 50%),
-                    radial-gradient(at 80% 50%, rgba(139, 92, 246, 0.08) 0px, transparent 50%);
+        background: radial-gradient(at 40% 20%, rgba(241, 245, 249, 0.8) 0px, transparent 50%),
+                    radial-gradient(at 80% 0%, rgba(226, 232, 240, 0.5) 0px, transparent 50%),
+                    radial-gradient(at 0% 50%, rgba(248, 250, 252, 0.6) 0px, transparent 50%),
+                    radial-gradient(at 80% 50%, rgba(10, 1, 79, 0.03) 0px, transparent 50%);
       }
     </style>
   </head>
