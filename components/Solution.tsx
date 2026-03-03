@@ -1,18 +1,22 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Lightbulb, Sparkles, CheckCircle } from 'lucide-react';
+import { Lightbulb, Sparkles, CheckCircle, MessageCircle, Search, PieChart, Shield, Share2, Handshake, LucideIcon } from 'lucide-react';
+
+const SOLUTION_ICONS: Record<string, LucideIcon> = {
+  MessageCircle, Search, PieChart, Shield, Share2, Handshake
+};
 import Section from './Section';
 import FadeInSection from './FadeInSection';
 
 const Solution: React.FC = () => {
   const points = [
-    { id: '01', title: '맞춤형 1:1 컨설팅', text: '당신의 병원만을 위한 현황 분석으로, 가장 효과적인 전환 경로를 설계합니다.', imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=300&auto=format&fit=crop' },
-    { id: '02', title: '강점 발견 & 강조', text: '병원의 숨겨진 강점을 찾아, 환자가 선택해야 할 이유를 분명히 합니다.', imageUrl: 'https://images.unsplash.com/photo-1584515159900-e29d78bc9714?q=80&w=300&auto=format&fit=crop' },
-    { id: '03', title: '효율적 투자 설계', text: '광고비를 줄이면서 신뢰는 쌓이도록, 맞춤형 전략을 제안합니다.', imageUrl: 'https://images.unsplash.com/photo-1559839734-2b71f1e598c6?q=80&w=300&auto=format&fit=crop' },
-    { id: '04', title: '24/7 리스크 관리', text: '악성 리뷰·부정적 노출을 예방하는 철저한 모니터링으로 병원 평판을 지킵니다.', imageUrl: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=300&auto=format&fit=crop' },
-    { id: '05', title: '투명한 진행 공유', text: '매체별 일정과 성과를 실시간 공유해, 원장님이 언제든 확인하실 수 있습니다.', imageUrl: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=300&auto=format&fit=crop' },
-    { id: '06', title: '끊임없는 동행', text: '한 번 시작하면, 결과가 나올 때까지 끝까지 함께합니다.', imageUrl: 'https://images.unsplash.com/photo-1631815541542-e896f4795f70?q=80&w=300&auto=format&fit=crop' },
+    { id: '01', title: '맞춤형 1:1 컨설팅', text: '당신의 병원만을 위한 현황 분석으로, 가장 효과적인 전환 경로를 설계합니다.', icon: 'MessageCircle', gradient: 'from-brand-light via-brand-rose/25 to-brand-lavender/20', iconColor: 'text-sky-600', badgeAccent: 'border-sky-300/80' },
+    { id: '02', title: '강점 발견 & 강조', text: '병원의 숨겨진 강점을 찾아, 환자가 선택해야 할 이유를 분명히 합니다.', icon: 'Search', gradient: 'from-brand-light via-brand-lavender/25 to-brand-pink/20', iconColor: 'text-violet-600', badgeAccent: 'border-violet-300/80' },
+    { id: '03', title: '효율적 투자 설계', text: '광고비를 줄이면서 신뢰는 쌓이도록, 맞춤형 전략을 제안합니다.', icon: 'PieChart', gradient: 'from-slate-50 via-brand-navy/10 to-brand-rose/15', iconColor: 'text-emerald-600', badgeAccent: 'border-emerald-300/80' },
+    { id: '04', title: '24/7 리스크 관리', text: '악성 리뷰·부정적 노출을 예방하는 철저한 모니터링으로 병원 평판을 지킵니다.', icon: 'Shield', gradient: 'from-brand-light via-brand-pink/20 to-brand-lavender/15', iconColor: 'text-indigo-600', badgeAccent: 'border-indigo-300/80' },
+    { id: '05', title: '투명한 진행 공유', text: '매체별 일정과 성과를 실시간 공유해, 원장님이 언제든 확인하실 수 있습니다.', icon: 'Share2', gradient: 'from-slate-50 via-brand-lavender/20 to-brand-rose/15', iconColor: 'text-fuchsia-600', badgeAccent: 'border-fuchsia-300/80' },
+    { id: '06', title: '끊임없는 동행', text: '한 번 시작하면, 결과가 나올 때까지 끝까지 함께합니다.', icon: 'Handshake', gradient: 'from-brand-light via-brand-rose/20 to-brand-lavender/25', iconColor: 'text-amber-600', badgeAccent: 'border-amber-300/80' },
   ];
 
   return (
@@ -59,21 +63,26 @@ const Solution: React.FC = () => {
       </div>
 
       <div className="max-w-5xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {points.map((p, i) => (
             <FadeInSection key={p.id} delay={i * 80}>
             <div
               className="card-shimmer overflow-hidden bg-slate-50 border border-brand-rose rounded-2xl shadow-sm hover:shadow-xl hover:bg-white hover:border-brand-lavender hover:-translate-y-2 transition-all duration-300 group/card"
             >
-              <div className="h-20 overflow-hidden">
-                <img
-                  src={p.imageUrl}
-                  alt={p.title}
-                  className="w-full h-full object-cover opacity-90 transition-transform duration-500 group-hover/card:scale-110"
-                />
+              <div className={`card-icon-header min-h-[140px] flex items-center justify-center bg-gradient-to-br ${p.gradient} transition-all duration-500 group-hover/card:opacity-95`}>
+                <div className="relative flex items-center justify-center">
+                  <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full blur-lg bg-opacity-20 opacity-30 ${p.iconColor.replace('text-', 'bg-')}`} />
+                  <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full border-2 ${p.badgeAccent} transition-colors duration-300`} />
+                  <div className={`card-icon-badge card-icon-float relative z-10 w-16 h-16 rounded-xl bg-white/90 backdrop-blur-sm border-2 flex items-center justify-center group-hover/card:bg-white group-hover/card:shadow-xl group-hover/card:scale-110 transition-all duration-300 ${p.badgeAccent}`}>
+                    {(() => {
+                      const Icon = SOLUTION_ICONS[p.icon];
+                      return Icon ? <Icon size={28} className={`${p.iconColor} group-hover/card:scale-110 transition-all duration-300`} strokeWidth={1.8} /> : null;
+                    })()}
+                  </div>
+                </div>
               </div>
-              <div className="p-14 pt-8">
-              <span className="text-2xl font-black text-brand-navy/80 block mb-10 font-serif italic group-hover/card:text-brand-lavender transition-colors duration-300">
+              <div className="p-8 pt-6">
+              <span className="text-2xl font-black text-brand-navy/80 block mb-6 font-serif italic group-hover/card:text-brand-lavender transition-colors duration-300">
                 {p.id}
               </span>
               <h3 className="text-xl font-bold text-brand-navy mb-5 tracking-tight">

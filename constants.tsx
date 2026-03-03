@@ -163,8 +163,8 @@ export const getInquiryActivity = (): { hospital: string; category: string; loca
 };
 
 export const PAIN_POINTS = [
-  { title: '의료법이 두렵다', description: '선전·과대광고 금지 때문에 뭘 해도 되고 안 되는지 모르겠다.', imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=400&auto=format&fit=crop' },
-  { title: '채널이 각자 논다', description: '블로그, 플레이스, 인스타가 따로 놀아 시너지가 전혀 안 난다.', imageUrl: 'https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=400&auto=format&fit=crop' },
-  { title: '결과가 보이지 않는다', description: '광고비는 나가는데, 어디서 얼마나 왔는지 설명을 못 받는다.', imageUrl: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=400&auto=format&fit=crop' },
-  { title: '광고 끄면 끝이다', description: '광고로 잠깐 늘었지만, 병원 자체에 쌓인 게 없어 끄면 다시 줄어든다.', imageUrl: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=400&auto=format&fit=crop' }
+  { title: '의료법이 두렵다', description: '선전·과대광고 금지 때문에 뭘 해도 되고 안 되는지 모르겠다.', icon: 'Scale', gradient: 'from-slate-50 via-brand-rose/15 to-brand-lavender/20', iconColor: 'text-indigo-600', badgeAccent: 'border-indigo-300/80' },
+  { title: '채널이 각자 논다', description: '블로그, 플레이스, 인스타가 따로 놀아 시너지가 전혀 안 난다.', icon: 'LayoutGrid', gradient: 'from-slate-50 via-brand-lavender/15 to-brand-pink/20', iconColor: 'text-teal-600', badgeAccent: 'border-teal-300/80' },
+  { title: '결과가 보이지 않는다', description: '광고비는 나가는데, 어디서 얼마나 왔는지 설명을 못 받는다.', icon: 'BarChart3', gradient: 'from-slate-50 via-brand-navy/5 to-brand-rose/15', iconColor: 'text-amber-600', badgeAccent: 'border-amber-300/80' },
+  { title: '광고 끄면 끝이다', description: '광고로 잠깐 늘었지만, 병원 자체에 쌓인 게 없어 끄면 다시 줄어든다.', icon: 'ZapOff', gradient: 'from-slate-50 via-brand-pink/25 to-brand-lavender/15', iconColor: 'text-rose-600', badgeAccent: 'border-rose-300/80' }
 ];

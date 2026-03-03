@@ -1,7 +1,9 @@
 
 import React from 'react';
 import { PAIN_POINTS } from '../constants';
-import { HelpCircle, AlertTriangle, Sparkles } from 'lucide-react';
+import { HelpCircle, AlertTriangle, Sparkles, Scale, LayoutGrid, BarChart3, ZapOff, LucideIcon } from 'lucide-react';
+
+const PAIN_ICONS: Record<string, LucideIcon> = { Scale, LayoutGrid, BarChart3, ZapOff };
 import Section from './Section';
 import FadeInSection from './FadeInSection';
 
@@ -47,20 +49,27 @@ const Problem: React.FC = () => {
       </FadeInSection>
 
       <div className="max-w-3xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {PAIN_POINTS.map((item, index) => (
             <FadeInSection key={index} delay={index * 80}>
             <div
               className="card-shimmer overflow-hidden bg-white border border-brand-rose rounded-2xl shadow-sm hover:shadow-xl hover:border-brand-lavender hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 group/card"
             >
-              <div className="h-32 overflow-hidden">
-                <img
-                  src={item.imageUrl}
-                  alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-110"
-                />
+              <div className={`card-icon-header min-h-[160px] flex items-center justify-center bg-gradient-to-br ${item.gradient} transition-all duration-500 group-hover/card:opacity-95`}>
+                <div className="relative flex items-center justify-center gap-4">
+                  {/* 장식 원형들 */}
+                  <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full blur-xl bg-opacity-20 transition-opacity duration-500 ${item.iconColor.replace('text-', 'bg-')} opacity-30`} />
+                  <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full border-2 ${item.badgeAccent.split(' ')[0]} transition-colors duration-300`} />
+                  {/* 아이콘 배지 */}
+                  <div className={`card-icon-badge card-icon-float relative z-10 w-20 h-20 rounded-2xl bg-white/90 backdrop-blur-sm border-2 flex items-center justify-center group-hover/card:bg-white group-hover/card:shadow-xl group-hover/card:scale-110 transition-all duration-300 ${item.badgeAccent}`}>
+                    {(() => {
+                      const Icon = PAIN_ICONS[item.icon];
+                      return Icon ? <Icon size={36} className={`${item.iconColor} group-hover/card:scale-110 transition-all duration-300`} strokeWidth={1.8} /> : null;
+                    })()}
+                  </div>
+                </div>
               </div>
-              <div className="px-8 py-11">
+              <div className="px-8 py-10">
                 <span className="text-2xl font-black text-brand-navy/80 block mb-6 font-serif italic group-hover/card:text-brand-lavender transition-colors duration-300">
                   0{index + 1}
                 </span>
