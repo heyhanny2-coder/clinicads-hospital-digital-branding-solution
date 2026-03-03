@@ -46,30 +46,73 @@ const Hero: React.FC = () => {
       centered
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-32 md:pt-40 md:pb-40"
     >
-      {/* 배경: 컬러풀 오브 + 메시 그라데이션 */}
+      {/* 배경: 화려한 컬러풀 오브 + 메시 그라데이션 */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[550px] bg-gradient-to-br from-slate-100/80 via-slate-50/60 to-slate-100/70 rounded-full blur-[200px] animate-gradient-flow" />
-        <div className="absolute bottom-0 right-0 w-[550px] h-[450px] bg-slate-100/50 rounded-full blur-[150px] animate-blob-pulse" />
-        <div className="absolute top-20 left-1/4 w-[300px] h-[300px] bg-slate-200/30 rounded-full blur-[100px] animate-float" />
-        <div className="absolute bottom-1/3 left-0 w-[250px] h-[250px] bg-slate-100/40 rounded-full blur-[90px] animate-float-reverse" />
-        <div className="absolute top-1/3 right-1/4 w-[200px] h-[200px] bg-slate-200/20 rounded-full blur-[80px] animate-float" />
+        {/* 오로라 그라데이션 베이스 */}
+        <div className="absolute inset-0 hero-aurora" />
+        {/* 베이스 그라데이션 블롭 */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[550px] bg-gradient-to-br from-slate-100/90 via-slate-50/70 to-slate-100/80 rounded-full blur-[200px] animate-gradient-flow" />
+        <div className="absolute bottom-0 right-0 w-[550px] h-[450px] bg-slate-100/60 rounded-full blur-[150px] animate-blob-pulse" />
+        <div className="absolute top-20 left-1/4 w-[300px] h-[300px] bg-slate-200/40 rounded-full blur-[100px] animate-float" />
+        <div className="absolute bottom-1/3 left-0 w-[250px] h-[250px] bg-slate-100/50 rounded-full blur-[90px] animate-float-reverse" />
+        <div className="absolute top-1/3 right-1/4 w-[200px] h-[200px] bg-slate-200/30 rounded-full blur-[80px] animate-float" />
+        {/* 화려한 브랜드 컬러 블롭 */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-br from-brand-lavender/35 via-brand-pink/25 to-brand-rose/30 rounded-full blur-[200px] hero-gradient-morph" />
+        <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-brand-lavender/30 rounded-full blur-[180px] animate-float" style={{ animationDelay: '2s' }} />
+        <div className="absolute bottom-0 left-1/3 w-[450px] h-[450px] bg-brand-rose/25 rounded-full blur-[150px] animate-float-reverse" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/4 right-0 w-[300px] h-[300px] bg-brand-pink/20 rounded-full blur-[120px] animate-float" style={{ animationDelay: '3s' }} />
+        <div className="absolute bottom-1/4 left-0 w-[280px] h-[280px] bg-brand-lavender/25 rounded-full blur-[110px] animate-float-reverse" style={{ animationDelay: '2.5s' }} />
+        {/* 광선 스윕 효과 */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-0 left-0 w-[100%] h-[120%] hero-light-sweep bg-gradient-to-r from-transparent via-brand-lavender/30 to-transparent origin-left" style={{ animationDelay: '0s' }} />
+          <div className="absolute top-0 left-0 w-[90%] h-[110%] hero-light-sweep bg-gradient-to-r from-transparent via-brand-pink/25 to-transparent origin-left" style={{ animationDelay: '4s' }} />
+        </div>
+        {/* 중앙 방사형 빛 */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_40%,rgba(205,159,204,0.25)_0%,rgba(205,159,204,0.08)_40%,transparent_70%)] hero-radial-glow" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_80%_at_30%_70%,rgba(228,194,198,0.2)_0%,transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_60%_at_70%_30%,rgba(246,202,202,0.18)_0%,transparent_50%)]" />
         <div className="absolute inset-0 bg-mesh-gradient" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(10,1,79,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(10,1,79,0.06)_1px,transparent_1px)] bg-[size:40px_40px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(10,1,79,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(10,1,79,0.08)_1px,transparent_1px)] bg-[size:40px_40px]" />
+        {/* 반짝이는 파티클 */}
+        {[...Array(12)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 rounded-full bg-brand-lavender hero-sparkle"
+            style={{
+              left: `${10 + (i * 7) % 80}%`,
+              top: `${15 + (i * 11) % 70}%`,
+              animationDelay: `${i * 0.3}s`,
+            }}
+          />
+        ))}
+        {[...Array(8)].map((_, i) => (
+          <div
+            key={`r-${i}`}
+            className="absolute w-1.5 h-1.5 rounded-full bg-brand-rose/80 hero-sparkle"
+            style={{
+              left: `${20 + (i * 9) % 70}%`,
+              top: `${25 + (i * 7) % 60}%`,
+              animationDelay: `${i * 0.4 + 0.5}s`,
+            }}
+          />
+        ))}
+        {/* 노이즈 텍스처 */}
+        <div className="absolute inset-0 hero-grain mix-blend-overlay" />
         {/* 플로팅 장식 아이콘 */}
-        <div className="absolute top-[15%] left-[12%] opacity-20 animate-bounce-soft">
-          <Search size={28} className="text-brand-lavender" />
+        <div className="absolute top-[15%] left-[12%] opacity-30 animate-bounce-soft">
+          <Search size={28} className="text-brand-lavender drop-shadow-sm" />
         </div>
-        <div className="absolute top-[25%] right-[15%] opacity-25 animate-float" style={{ animationDelay: '1s' }}>
-          <Heart size={24} className="text-brand-lavender fill-brand-lavender/30" />
+        <div className="absolute top-[25%] right-[15%] opacity-35 animate-float" style={{ animationDelay: '1s' }}>
+          <Heart size={24} className="text-brand-lavender fill-brand-lavender/40 drop-shadow-sm" />
         </div>
-        <div className="absolute bottom-[35%] left-[18%] opacity-20 animate-float-reverse" style={{ animationDelay: '2s' }}>
-          <Sparkles size={22} className="text-brand-navy" />
+        <div className="absolute bottom-[35%] left-[18%] opacity-30 animate-float-reverse" style={{ animationDelay: '2s' }}>
+          <Sparkles size={22} className="text-brand-navy drop-shadow-sm" />
         </div>
-        <div className="absolute bottom-[25%] right-[10%] opacity-20 animate-bounce-soft" style={{ animationDelay: '0.5s' }}>
-          <TrendingUp size={26} className="text-brand-lavender" />
+        <div className="absolute bottom-[25%] right-[10%] opacity-30 animate-bounce-soft" style={{ animationDelay: '0.5s' }}>
+          <TrendingUp size={26} className="text-brand-lavender drop-shadow-sm" />
         </div>
-        <div className="absolute top-[40%] right-[8%] opacity-15 animate-wiggle">
-          <Sparkles size={18} className="text-brand-navy" />
+        <div className="absolute top-[40%] right-[8%] opacity-25 animate-wiggle">
+          <Sparkles size={18} className="text-brand-navy drop-shadow-sm" />
         </div>
         <div className="absolute bottom-[45%] left-[8%] opacity-15 animate-spin-slow">
           <div className="w-3 h-3 rounded-full bg-brand-lavender/40" />
@@ -80,10 +123,12 @@ const Hero: React.FC = () => {
           <Heart size={16} className="text-brand-lavender animate-float" />
         </div>
         {/* 추가 장식 도형 */}
-        <div className="absolute top-[10%] right-[20%] w-16 h-16 rounded-2xl border-2 border-brand-lavender/15 rotate-12 animate-float" style={{ animationDelay: '2s' }} />
-        <div className="absolute bottom-[20%] right-[25%] w-12 h-12 rounded-full bg-brand-rose/10 animate-float-reverse" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-[55%] left-[20%] w-20 h-20 rounded-3xl border border-brand-lavender/10 -rotate-6 animate-float" style={{ animationDelay: '0.5s' }} />
-        <div className="absolute top-[30%] right-[5%] w-24 h-24 rounded-full bg-gradient-to-br from-brand-lavender/10 to-transparent animate-blob-pulse" />
+        <div className="absolute top-[10%] right-[20%] w-16 h-16 rounded-2xl border-2 border-brand-lavender/25 rotate-12 animate-float" style={{ animationDelay: '2s' }} />
+        <div className="absolute bottom-[20%] right-[25%] w-12 h-12 rounded-full bg-brand-rose/20 animate-float-reverse" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-[55%] left-[20%] w-20 h-20 rounded-3xl border-2 border-brand-lavender/20 -rotate-6 animate-float" style={{ animationDelay: '0.5s' }} />
+        <div className="absolute top-[30%] right-[5%] w-24 h-24 rounded-full bg-gradient-to-br from-brand-lavender/20 to-transparent animate-blob-pulse" />
+        <div className="absolute bottom-[15%] left-[15%] w-14 h-14 rounded-xl border-2 border-brand-pink/20 rotate-45 animate-float" style={{ animationDelay: '1.5s' }} />
+        <div className="absolute top-[65%] right-[20%] w-10 h-10 rounded-full bg-brand-lavender/25 animate-bounce-soft" style={{ animationDelay: '0.8s' }} />
       </div>
 
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4">

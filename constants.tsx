@@ -56,135 +56,42 @@ export const PROCESS_STEPS: ProcessStep[] = [
   { step: 5, title: '구조 안정화', description: '지속 가능한 검색 문의 구조 완성' }
 ];
 
+const PORTFOLIO_IMAGES = [
+  'https://images.unsplash.com/photo-1584515159900-e29d78bc9714?q=80&w=800&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1559839734-2b71f1e598c6?q=80&w=800&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=800&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1527613426441-4da17471b66d?q=80&w=800&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=800&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=800&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1631815541542-e896f4795f70?q=80&w=800&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1590611357124-73d828355f2d?q=80&w=800&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=800&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop',
+];
+
 export const PORTFOLIO: PortfolioItem[] = [
-  { 
-    id: '1', 
-    category: '산부인과', 
-    title: '연세아름다운산부인과', 
-    location: '서대문구',
-    review: '맡긴 뒤 온라인 문의가 엄청 늘었어요! 플레이스 예약도 2배 이상 증가했네요.',
-    imageUrl: 'https://images.unsplash.com/photo-1584515159900-e29d78bc9714?q=80&w=800&auto=format&fit=crop' 
-  },
-  { 
-    id: '2', 
-    category: '피부과', 
-    title: '페이브 피부과의원', 
-    location: '용산구',
-    review: '블로그와 인스타 운영으로 신규 환자가 많이 늘었어요. 체계적인 관리가 인상적이에요!',
-    imageUrl: 'https://images.unsplash.com/photo-1559839734-2b71f1e598c6?q=80&w=800&auto=format&fit=crop' 
-  },
-  { 
-    id: '3', 
-    category: '성형외과', 
-    title: '셀업성형외과', 
-    location: '강남구',
-    review: '영상 콘텐츠 덕분에 병원 신뢰도가 높아졌어요. 예약도 훨씬 잘 들어오고요.',
-    imageUrl: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=800&auto=format&fit=crop' 
-  },
-  { 
-    id: '4', 
-    category: '피부과', 
-    title: '하오덤의원', 
-    location: '강남구',
-    review: '리뷰 관리 덕분에 평점이 올라가고 검색 노출도 좋아졌어요!',
-    imageUrl: 'https://images.unsplash.com/photo-1527613426441-4da17471b66d?q=80&w=800&auto=format&fit=crop' 
-  },
-  { 
-    id: '5', 
-    category: '성형외과', 
-    title: '리드성형외과', 
-    location: '강남구',
-    review: '통합 브랜딩으로 병원 이미지가 좋아졌어요. 환자 만족도도 높아졌네요.',
-    imageUrl: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=800&auto=format&fit=crop' 
-  },
-  { 
-    id: '6', 
-    category: '피부과', 
-    title: '파인트리피부과의원', 
-    location: '분당구',
-    review: '의료법 준수하면서도 효과적인 마케팅이 가능해져 안심이에요!',
-    imageUrl: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=800&auto=format&fit=crop' 
-  },
-  { 
-    id: '7', 
-    category: '한의원', 
-    title: '다나슬한의원', 
-    location: '중구',
-    review: 'SNS 브랜딩으로 젊은 환자 유입이 늘었어요. 병원 전문성도 잘 알려지고 있어요.',
-    imageUrl: 'https://images.unsplash.com/photo-1631815541542-e896f4795f70?q=80&w=800&auto=format&fit=crop' 
-  },
-  { 
-    id: '8', 
-    category: '치과', 
-    title: '서울뷰치과의원', 
-    location: '대전',
-    review: '보고서로 마케팅 성과가 한눈에 보여요. 무엇이 잘 되고 있는지 명확해요!',
-    imageUrl: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800&auto=format&fit=crop' 
-  },
-  { 
-    id: '9', 
-    category: '한의원', 
-    title: '검단약손한의원', 
-    location: '인천',
-    review: '지역 내 검색 노출이 크게 좋아졌어요! 신규 환자도 계속 늘고 있어요.',
-    imageUrl: 'https://images.unsplash.com/photo-1590611357124-73d828355f2d?q=80&w=800&auto=format&fit=crop' 
-  },
-  { 
-    id: '10', 
-    category: '내과', 
-    title: '속편한윤내과', 
-    location: '대전',
-    review: '체계적인 콘텐츠 운영으로 병원 신뢰도가 높아졌어요. 재방문율도 올랐네요.',
-    imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop' 
-  },
-  { 
-    id: '11', 
-    category: '피부과', 
-    title: '혜성플러스의원', 
-    location: '동대문구',
-    review: '맡긴 뒤 온라인 문의가 많이 늘었어요! 카카오톡 상담도 활발해졌네요.',
-    imageUrl: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800&auto=format&fit=crop' 
-  },
-  { 
-    id: '12', 
-    category: '정신건강의학과', 
-    title: '서울뜰정신건강의학과의원', 
-    location: '서울',
-    review: '플레이스와 블로그 운영으로 검색 노출이 좋아졌어요. 신뢰도도 함께 올랐네요.',
-    imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop' 
-  },
-  { 
-    id: '13', 
-    category: '치과', 
-    title: '산본엘치과', 
-    location: '군포시',
-    review: '디지털 브랜딩 후 플레이스 순위가 올라가고 신규 환자가 늘었어요!',
-    imageUrl: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800&auto=format&fit=crop' 
-  },
-  { 
-    id: '14', 
-    category: '치과', 
-    title: '연세타이밍치과의원', 
-    location: '강남구',
-    review: '통합 마케팅으로 병원 가치가 높아졌어요. 예약도 꾸준히 들어오고 있어요.',
-    imageUrl: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800&auto=format&fit=crop' 
-  },
-  { 
-    id: '15', 
-    category: '정형외과', 
-    title: '광명척척정형외과의원', 
-    location: '광명시',
-    review: '지역 검색에서 잘 노출되게 되었어요. 콘텐츠 퀄리티 덕분에 신뢰도도 올랐어요.',
-    imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop' 
-  },
-  { 
-    id: '16', 
-    category: '한의원', 
-    title: '창명한의원', 
-    location: '서울',
-    review: '온라인 브랜딩으로 병원 인지도가 높아졌어요. 검색 노출과 예약이 함께 늘었습니다.',
-    imageUrl: 'https://images.unsplash.com/photo-1631815541542-e896f4795f70?q=80&w=800&auto=format&fit=crop' 
-  },
+  { id: '1', category: '산부인과', title: '연세아름다운산부인과', location: '서대문구', review: '맡긴 뒤 온라인 문의가 엄청 늘었어요! 플레이스 예약도 2배 이상 증가했네요.', imageUrl: PORTFOLIO_IMAGES[0] },
+  { id: '2', category: '피부과', title: '페이브 피부과의원', location: '용산구', review: '블로그와 인스타 운영으로 신규 환자가 많이 늘었어요. 체계적인 관리가 인상적이에요!', imageUrl: PORTFOLIO_IMAGES[1] },
+  { id: '3', category: '성형외과', title: '셀업성형외과', location: '강남구', review: '영상 콘텐츠 덕분에 병원 신뢰도가 높아졌어요. 예약도 훨씬 잘 들어오고요.', imageUrl: PORTFOLIO_IMAGES[2] },
+  { id: '4', category: '피부과', title: '하오덤의원', location: '강남구', review: '리뷰 관리 덕분에 평점이 올라가고 검색 노출도 좋아졌어요!', imageUrl: PORTFOLIO_IMAGES[3] },
+  { id: '5', category: '성형외과', title: '리드성형외과', location: '강남구', review: '통합 브랜딩으로 병원 이미지가 좋아졌어요. 환자 만족도도 높아졌네요.', imageUrl: PORTFOLIO_IMAGES[4] },
+  { id: '6', category: '피부과', title: '파인트리피부과의원', location: '분당구', review: '의료법 준수하면서도 효과적인 마케팅이 가능해져 안심이에요!', imageUrl: PORTFOLIO_IMAGES[5] },
+  { id: '7', category: '한의원', title: '다나슬한의원', location: '중구', review: 'SNS 브랜딩으로 젊은 환자 유입이 늘었어요. 병원 전문성도 잘 알려지고 있어요.', imageUrl: PORTFOLIO_IMAGES[6] },
+  { id: '8', category: '치과', title: '서울뷰치과의원', location: '대전', review: '보고서로 마케팅 성과가 한눈에 보여요. 무엇이 잘 되고 있는지 명확해요!', imageUrl: PORTFOLIO_IMAGES[7] },
+  { id: '9', category: '한의원', title: '검단약손한의원', location: '인천', review: '지역 내 검색 노출이 크게 좋아졌어요! 신규 환자도 계속 늘고 있어요.', imageUrl: PORTFOLIO_IMAGES[8] },
+  { id: '10', category: '내과', title: '속편한윤내과', location: '대전', review: '체계적인 콘텐츠 운영으로 병원 신뢰도가 높아졌어요. 재방문율도 올랐네요.', imageUrl: PORTFOLIO_IMAGES[9] },
+  { id: '11', category: '피부과', title: '혜성플러스의원', location: '동대문구', review: '맡긴 뒤 온라인 문의가 많이 늘었어요! 카카오톡 상담도 활발해졌네요.', imageUrl: PORTFOLIO_IMAGES[10] },
+  { id: '12', category: '정신건강의학과', title: '서울뜰정신건강의학과의원', location: '서울', review: '플레이스와 블로그 운영으로 검색 노출이 좋아졌어요. 신뢰도도 함께 올랐네요.', imageUrl: PORTFOLIO_IMAGES[11] },
+  { id: '13', category: '치과', title: '산본엘치과', location: '군포시', review: '디지털 브랜딩 후 플레이스 순위가 올라가고 신규 환자가 늘었어요!', imageUrl: PORTFOLIO_IMAGES[12] },
+  { id: '14', category: '치과', title: '연세타이밍치과의원', location: '강남구', review: '통합 마케팅으로 병원 가치가 높아졌어요. 예약도 꾸준히 들어오고 있어요.', imageUrl: PORTFOLIO_IMAGES[13] },
+  { id: '15', category: '정형외과', title: '광명척척정형외과의원', location: '광명시', review: '지역 검색에서 잘 노출되게 되었어요. 콘텐츠 퀄리티 덕분에 신뢰도도 올랐어요.', imageUrl: PORTFOLIO_IMAGES[14] },
+  { id: '16', category: '한의원', title: '창명한의원', location: '서울', review: '온라인 브랜딩으로 병원 인지도가 높아졌어요. 검색 노출과 예약이 함께 늘었습니다.', imageUrl: PORTFOLIO_IMAGES[15] },
 ];
 
 /** 메인 페이지에 노출할 포트폴리오 (순서 유지) */
@@ -256,8 +163,8 @@ export const getInquiryActivity = (): { hospital: string; category: string; loca
 };
 
 export const PAIN_POINTS = [
-  { title: '의료법이 두렵다', description: '선전·과대광고 금지 때문에 뭘 해도 되고 안 되는지 모르겠다.', imageUrl: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=400&auto=format&fit=crop' },
-  { title: '채널이 각자 논다', description: '블로그, 플레이스, 인스타가 따로 놀아 시너지가 전혀 안 난다.', imageUrl: 'https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=400&auto=format&fit=crop' },
-  { title: '결과가 보이지 않는다', description: '광고비는 나가는데, 어디서 얼마나 왔는지 설명을 못 받는다.', imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400&auto=format&fit=crop' },
-  { title: '광고 끄면 끝이다', description: '광고로 잠깐 늘었지만, 병원 자체에 쌓인 게 없어 끄면 다시 줄어든다.', imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=400&auto=format&fit=crop' }
+  { title: '의료법이 두렵다', description: '선전·과대광고 금지 때문에 뭘 해도 되고 안 되는지 모르겠다.', imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=400&auto=format&fit=crop' },
+  { title: '채널이 각자 논다', description: '블로그, 플레이스, 인스타가 따로 놀아 시너지가 전혀 안 난다.', imageUrl: 'https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=400&auto=format&fit=crop' },
+  { title: '결과가 보이지 않는다', description: '광고비는 나가는데, 어디서 얼마나 왔는지 설명을 못 받는다.', imageUrl: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=400&auto=format&fit=crop' },
+  { title: '광고 끄면 끝이다', description: '광고로 잠깐 늘었지만, 병원 자체에 쌓인 게 없어 끄면 다시 줄어든다.', imageUrl: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=400&auto=format&fit=crop' }
 ];
