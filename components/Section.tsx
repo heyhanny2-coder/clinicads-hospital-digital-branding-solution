@@ -36,7 +36,7 @@ const Section: React.FC<SectionProps> = ({
   }[background];
 
   const paddingClass =
-    padding === 'none' ? '' : padding === 'default' ? 'py-24' : 'py-32 md:py-40';
+    padding === 'none' ? '' : padding === 'default' ? 'py-16 md:py-20' : 'py-20 md:py-28';
 
   return (
     <section className={`${bgClass} ${paddingClass} ${className}`}>

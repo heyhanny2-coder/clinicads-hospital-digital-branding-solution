@@ -29,12 +29,12 @@ const Process: React.FC = () => {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(10,1,79,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(10,1,79,0.03)_1px,transparent_1px)] bg-[size:28px_28px]" />
       </div>
       <div className="relative z-10">
-      <div className="max-w-3xl mx-auto text-center mb-28">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-lavender/15 border border-brand-rose/50 text-brand-navy text-xs font-medium mb-8">
+      <div className="max-w-3xl mx-auto text-center mb-16">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-lavender/15 border border-brand-rose/50 text-brand-navy text-xs font-medium mb-6">
           <ListChecks size={12} className="text-brand-lavender" />
           투명한 프로세스
         </div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-navy leading-tight tracking-tight mb-10">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-navy leading-tight tracking-tight mb-6">
           <span className="text-highlight">감이 아닌</span>,<br />
           <span className="text-brand-navy/80"><span className="text-highlight-strong">데이터로 결과</span>를 만듭니다.</span>
         </h2>
@@ -45,7 +45,7 @@ const Process: React.FC = () => {
 
       <div className="max-w-3xl mx-auto relative">
         <div className="absolute left-8 top-16 bottom-16 w-0.5 border-l-2 border-dashed border-brand-lavender/25 hidden md:block" />
-        <div className="space-y-20 relative">
+        <div className="space-y-14 relative">
           {PROCESS_STEPS.map((step, index) => (
             <FadeInSection key={index} delay={index * 80}>
             <div

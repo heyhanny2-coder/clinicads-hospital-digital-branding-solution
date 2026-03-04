@@ -5,9 +5,9 @@ import { CONTACT_INFO } from '../constants';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-white border-t border-brand-rose py-16">
+    <footer className="bg-white border-t border-brand-rose py-12">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
           <div className="col-span-1 md:col-span-1">
             <Link to="/" className="text-xl font-black italic mb-6 block text-brand-navy">
               Clinic<span className="text-brand-lavender">Ads</span>
@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="pt-12 border-t border-brand-rose flex flex-col md:flex-row justify-between items-center gap-6 text-brand-navy/80 text-[10px] uppercase tracking-[0.2em] font-medium">
+        <div className="pt-10 border-t border-brand-rose flex flex-col md:flex-row justify-between items-center gap-6 text-brand-navy/80 text-[10px] uppercase tracking-[0.2em] font-medium">
           <p>© 2025 CLINICADS. ALL RIGHTS RESERVED.</p>
           <div className="flex gap-8">
             <a href="#" className="hover:text-brand-lavender transition-colors duration-300">Privacy Policy</a>

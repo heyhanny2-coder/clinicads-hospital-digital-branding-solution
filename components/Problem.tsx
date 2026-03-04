@@ -32,12 +32,12 @@ const Problem: React.FC = () => {
       </div>
       <div className="relative z-10">
       <FadeInSection>
-      <div className="max-w-3xl mx-auto text-center mb-28">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-lavender/15 border border-brand-rose/50 text-brand-navy text-xs font-medium mb-8 animate-float-up">
+      <div className="max-w-3xl mx-auto text-center mb-16">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-lavender/15 border border-brand-rose/50 text-brand-navy text-xs font-medium mb-6 animate-float-up">
           <HelpCircle size={12} className="text-brand-lavender" />
           원장님이라면 한 번쯤
         </div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-navy leading-tight tracking-tight mb-10">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-navy leading-tight tracking-tight mb-6">
           왜 <span className="text-highlight">광고를 해도</span><br />
           <span className="text-brand-navy/80">병원에는 환자가 안 남을까요?</span>
         </h2>
@@ -49,34 +49,32 @@ const Problem: React.FC = () => {
       </FadeInSection>
 
       <div className="max-w-3xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
           {PAIN_POINTS.map((item, index) => (
             <FadeInSection key={index} delay={index * 80}>
             <div
               className="card-shimmer overflow-hidden bg-white border border-brand-rose rounded-2xl shadow-sm hover:shadow-xl hover:border-brand-lavender hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 group/card"
             >
-              <div className={`card-icon-header min-h-[160px] flex items-center justify-center bg-gradient-to-br ${item.gradient} transition-all duration-500 group-hover/card:opacity-95`}>
-                <div className="relative flex items-center justify-center gap-4">
-                  {/* 장식 원형들 */}
-                  <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full blur-xl bg-opacity-20 transition-opacity duration-500 ${item.iconColor.replace('text-', 'bg-')} opacity-30`} />
-                  <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full border-2 ${item.badgeAccent.split(' ')[0]} transition-colors duration-300`} />
-                  {/* 아이콘 배지 */}
-                  <div className={`card-icon-badge card-icon-float relative z-10 w-20 h-20 rounded-2xl bg-white/90 backdrop-blur-sm border-2 flex items-center justify-center group-hover/card:bg-white group-hover/card:shadow-xl group-hover/card:scale-110 transition-all duration-300 ${item.badgeAccent}`}>
+              <div className={`card-icon-header min-h-[110px] flex items-center justify-center bg-gradient-to-br ${item.gradient} transition-all duration-500 group-hover/card:opacity-95`}>
+                <div className="relative flex items-center justify-center">
+                  <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full blur-lg ${item.iconColor.replace('text-', 'bg-')} opacity-25`} />
+                  <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full border-2 ${item.badgeAccent.split(' ')[0]} transition-colors duration-300`} />
+                  <div className={`card-icon-badge card-icon-float relative z-10 w-16 h-16 rounded-xl bg-white/90 backdrop-blur-sm border-2 flex items-center justify-center group-hover/card:bg-white group-hover/card:shadow-xl group-hover/card:scale-110 transition-all duration-300 ${item.badgeAccent}`}>
                     {(() => {
                       const Icon = PAIN_ICONS[item.icon];
-                      return Icon ? <Icon size={36} className={`${item.iconColor} group-hover/card:scale-110 transition-all duration-300`} strokeWidth={1.8} /> : null;
+                      return Icon ? <Icon size={34} className={`${item.iconColor} group-hover/card:scale-110 transition-all duration-300`} strokeWidth={1.8} /> : null;
                     })()}
                   </div>
                 </div>
               </div>
-              <div className="px-8 py-10">
-                <span className="text-2xl font-black text-brand-navy/80 block mb-6 font-serif italic group-hover/card:text-brand-lavender transition-colors duration-300">
+              <div className="px-5 py-6">
+                <span className="text-xl font-black text-brand-navy/80 block mb-3 font-serif italic group-hover/card:text-brand-lavender transition-colors duration-300">
                   0{index + 1}
                 </span>
-                <h3 className="text-xl font-bold text-brand-navy mb-5 tracking-tight">
+                <h3 className="text-lg font-bold text-brand-navy mb-2 tracking-tight">
                   {item.title}
                 </h3>
-                <p className="text-brand-navy/80 text-[15px] leading-relaxed font-normal">
+                <p className="text-brand-navy/80 text-[14px] leading-relaxed font-normal">
                   {item.description}
                 </p>
               </div>

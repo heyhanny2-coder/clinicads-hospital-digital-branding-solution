@@ -42,16 +42,16 @@ const Solution: React.FC = () => {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(10,1,79,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(10,1,79,0.02)_1px,transparent_1px)] bg-[size:36px_36px]" />
       </div>
       <div className="relative z-10">
-      <div className="max-w-3xl mx-auto text-center mb-28">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-lavender/15 border border-brand-rose/50 text-brand-navy text-xs font-medium mb-8">
+      <div className="max-w-3xl mx-auto text-center mb-16">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-lavender/15 border border-brand-rose/50 text-brand-navy text-xs font-medium mb-6">
           <Lightbulb size={12} className="text-brand-lavender" />
           Transformation
         </div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-navy leading-tight tracking-tight mb-10">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-navy leading-tight tracking-tight mb-6">
           <span className="text-highlight">광고비 지출</span>에서<br />
           <span className="text-brand-navy/80"><span className="text-highlight-strong">신뢰 축적 구조</span>로 전환하세요.</span>
         </h2>
-        <p className="text-brand-navy/80 text-base font-normal leading-relaxed mb-14">
+        <p className="text-brand-navy/80 text-base font-normal leading-relaxed mb-8">
           ClinicAds는 단순 광고 대행이 아닙니다. 환자가 검색할 때 발견되고, 믿고, 예약하는—<span className="text-highlight-strong">병원만의 신뢰 설계</span>를 함께 만듭니다.
         </p>
         <Link
@@ -63,17 +63,17 @@ const Solution: React.FC = () => {
       </div>
 
       <div className="max-w-5xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {points.map((p, i) => (
             <FadeInSection key={p.id} delay={i * 80}>
             <div
               className="card-shimmer overflow-hidden bg-slate-50 border border-brand-rose rounded-2xl shadow-sm hover:shadow-xl hover:bg-white hover:border-brand-lavender hover:-translate-y-2 transition-all duration-300 group/card"
             >
-              <div className={`card-icon-header min-h-[140px] flex items-center justify-center bg-gradient-to-br ${p.gradient} transition-all duration-500 group-hover/card:opacity-95`}>
+              <div className={`card-icon-header min-h-[100px] flex items-center justify-center bg-gradient-to-br ${p.gradient} transition-all duration-500 group-hover/card:opacity-95`}>
                 <div className="relative flex items-center justify-center">
-                  <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full blur-lg bg-opacity-20 opacity-30 ${p.iconColor.replace('text-', 'bg-')}`} />
-                  <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full border-2 ${p.badgeAccent} transition-colors duration-300`} />
-                  <div className={`card-icon-badge card-icon-float relative z-10 w-16 h-16 rounded-xl bg-white/90 backdrop-blur-sm border-2 flex items-center justify-center group-hover/card:bg-white group-hover/card:shadow-xl group-hover/card:scale-110 transition-all duration-300 ${p.badgeAccent}`}>
+                  <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full blur-md ${p.iconColor.replace('text-', 'bg-')} opacity-25`} />
+                  <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full border-2 ${p.badgeAccent} transition-colors duration-300`} />
+                  <div className={`card-icon-badge card-icon-float relative z-10 w-14 h-14 rounded-lg bg-white/90 backdrop-blur-sm border-2 flex items-center justify-center group-hover/card:bg-white group-hover/card:shadow-xl group-hover/card:scale-110 transition-all duration-300 ${p.badgeAccent}`}>
                     {(() => {
                       const Icon = SOLUTION_ICONS[p.icon];
                       return Icon ? <Icon size={28} className={`${p.iconColor} group-hover/card:scale-110 transition-all duration-300`} strokeWidth={1.8} /> : null;
@@ -81,14 +81,14 @@ const Solution: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <div className="p-8 pt-6">
-              <span className="text-2xl font-black text-brand-navy/80 block mb-6 font-serif italic group-hover/card:text-brand-lavender transition-colors duration-300">
+              <div className="p-5 pt-4">
+              <span className="text-xl font-black text-brand-navy/80 block mb-3 font-serif italic group-hover/card:text-brand-lavender transition-colors duration-300">
                 {p.id}
               </span>
-              <h3 className="text-xl font-bold text-brand-navy mb-5 tracking-tight">
+              <h3 className="text-lg font-bold text-brand-navy mb-2 tracking-tight">
                 {p.title}
               </h3>
-              <p className="text-brand-navy/80 text-[15px] leading-relaxed font-normal">
+              <p className="text-brand-navy/80 text-[14px] leading-relaxed font-normal">
                 {p.text}
               </p>
               </div>

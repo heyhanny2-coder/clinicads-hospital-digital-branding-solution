@@ -44,7 +44,7 @@ const Hero: React.FC = () => {
       padding="none"
       containerSize="default"
       centered
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-32 md:pt-40 md:pb-40"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-28 pb-24 md:pt-32 md:pb-28"
     >
       {/* 배경: 화려한 컬러풀 오브 + 메시 그라데이션 */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">

@@ -15,7 +15,7 @@ const Proof: React.FC = () => {
   ];
 
   return (
-    <Section background="blue" padding="none" className="relative overflow-hidden py-16 md:py-20">
+    <Section background="blue" padding="none" className="relative overflow-hidden py-12 md:py-16">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[400px] bg-brand-lavender/25 rounded-full blur-[140px] animate-blob-pulse" />
         <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-slate-200/30 rounded-full blur-[120px] animate-float" />
@@ -38,7 +38,7 @@ const Proof: React.FC = () => {
         <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(205,159,204,0.05)_1px,transparent_1px),linear-gradient(-135deg,rgba(205,159,204,0.05)_1px,transparent_1px)] bg-[size:24px_24px]" />
       </div>
       <div className="relative z-10">
-      <div className="max-w-4xl mx-auto mb-10">
+      <div className="max-w-4xl mx-auto mb-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6 text-center">
           {stats.map((stat, i) => (
             <FadeInSection key={i} delay={i * 100}>
@@ -56,7 +56,7 @@ const Proof: React.FC = () => {
       </div>
 
       <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-8">
+        <div className="text-center mb-6">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/60 backdrop-blur-sm border border-brand-lavender/30 text-brand-navy text-xs font-medium mb-4">
           <Trophy size={12} className="text-brand-lavender" />
           Trust & Results

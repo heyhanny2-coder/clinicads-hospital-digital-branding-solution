@@ -30,7 +30,7 @@ const Services: React.FC = () => {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(10,1,79,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(10,1,79,0.02)_1px,transparent_1px)] bg-[size:48px_48px]" />
       </div>
       <div className="relative z-10">
-        <div className="max-w-3xl mx-auto text-center mb-20">
+        <div className="max-w-3xl mx-auto text-center mb-14">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-lavender/15 border border-brand-rose/50 text-brand-navy text-xs font-medium mb-6">
             <Sparkles size={12} className="text-brand-lavender" />
             결과로 증명된 서비스
@@ -50,7 +50,7 @@ const Services: React.FC = () => {
               const Icon = (LucideIcons as Record<string, React.ComponentType<{ size?: number }>>)[service.icon] || LucideIcons.PenTool;
               return (
                 <FadeInSection key={service.id} delay={i * 80}>
-                  <div className="card-shimmer h-full flex flex-col p-8 md:p-10 bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-xl hover:border-brand-lavender/50 hover:-translate-y-2 transition-all duration-300 group">
+                  <div className="card-shimmer h-full flex flex-col p-6 md:p-8 bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-xl hover:border-brand-lavender/50 hover:-translate-y-2 transition-all duration-300 group">
                     <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-slate-50 text-brand-navy mb-6 group-hover:bg-brand-lavender/20 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
                       <Icon size={24} />
                     </div>
@@ -74,7 +74,7 @@ const Services: React.FC = () => {
             })}
           </div>
 
-          <div className="text-center mt-16">
+          <div className="text-center mt-12">
             <Link
               to="/services"
               className="link-underline-expand inline-block text-brand-navy font-semibold text-sm tracking-[0.15em] uppercase border-b-2 border-brand-navy pb-2 hover:text-brand-navy/90 transition-colors"

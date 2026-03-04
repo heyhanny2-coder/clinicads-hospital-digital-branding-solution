@@ -46,7 +46,7 @@ const RealtimeInquiry: React.FC = () => {
   if (inquiries.length === 0) return null;
 
   return (
-    <Section background="slate" padding="none" className="relative overflow-hidden py-14 md:py-16">
+    <Section background="slate" padding="none" className="relative overflow-hidden py-10 md:py-12">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-[350px] h-[350px] bg-brand-lavender/20 rounded-full blur-[100px] animate-float" />
         <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-slate-200/20 rounded-full blur-[90px] animate-float-reverse" />
@@ -66,7 +66,7 @@ const RealtimeInquiry: React.FC = () => {
       </div>
       <div className="relative z-10">
         <FadeInSection>
-          <div className="max-w-3xl mx-auto text-center mb-8">
+          <div className="max-w-3xl mx-auto text-center mb-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-lavender/20 text-brand-navy text-xs font-medium mb-4">
               <span className="w-2 h-2 rounded-full bg-brand-lavender animate-pulse" />
               실시간

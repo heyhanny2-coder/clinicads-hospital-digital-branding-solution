@@ -30,19 +30,19 @@ const CTA: React.FC = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(205,159,204,0.08)_0%,transparent_50%)]" />
       </div>
       <div className="relative z-10">
-      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-lavender/20 border border-brand-rose/50 text-brand-navy text-xs font-medium mb-10 animate-float-up">
+      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-lavender/20 border border-brand-rose/50 text-brand-navy text-xs font-medium mb-6 animate-float-up">
         <Gift size={12} className="text-brand-lavender" />
         무료로 시작하세요
       </div>
-      <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight tracking-tight mb-12">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight tracking-tight mb-8">
         <span className="text-highlight">투자 전에</span>,<br />
         <span className="text-brand-navy/80">병원이 환자에게 어떻게 보이는지 먼저 확인하세요.</span>
       </h2>
-      <p className="text-brand-navy/80 text-base font-normal mb-12 max-w-xl mx-auto">
+      <p className="text-brand-navy/80 text-base font-normal mb-8 max-w-xl mx-auto">
         플레이스·키워드 현황을 <span className="text-highlight-strong">무료로 진단</span>해 드립니다.<br />
         비용 부담 없이, 당신의 병원이 할 수 있는 것을 먼저 보여드립니다.
       </p>
-      <p className="text-sm text-brand-navy/80 font-medium mb-16 flex flex-wrap justify-center gap-x-6 gap-y-1">
+      <p className="text-sm text-brand-navy/80 font-medium mb-10 flex flex-wrap justify-center gap-x-6 gap-y-1">
         <span className="flex items-center gap-1.5 hover:text-brand-lavender transition-colors cursor-default">
           <span className="text-brand-lavender">✓</span> 비밀 유지
         </span>
