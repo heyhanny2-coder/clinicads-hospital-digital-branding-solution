@@ -14,7 +14,6 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
     { name: '홈', path: '/' },
     { name: '서비스', path: '/services' },
     { name: '포트폴리오', path: '/portfolio' },
-    { name: '견적계산기', path: 'https://clickadzcount.vercel.app/', isExternal: true },
     { name: '상담문의', path: '/contact' },
   ];
 
@@ -33,29 +32,17 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
         
         <div className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
-            link.isExternal ? (
-              <a
-                key={link.name}
-                href={link.path}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`text-[12px] font-bold tracking-[0.1em] transition-all duration-300 ${logoLight ? 'text-slate-300 hover:text-white hover:scale-105' : 'text-brand-navy/80 hover:text-brand-navy hover:scale-105'}`}
-              >
-                {link.name}
-              </a>
-            ) : (
-              <Link
-                key={link.name}
-                to={link.path}
-                className={`text-[12px] font-bold tracking-[0.1em] transition-all duration-300 hover:scale-105 ${
-                  logoLight
-                    ? (location.pathname === link.path ? 'text-brand-lavender' : 'text-slate-300 hover:text-white')
-                    : (location.pathname === link.path ? 'text-brand-navy' : 'text-brand-navy/80 hover:text-brand-navy')
-                }`}
-              >
-                {link.name}
-              </Link>
-            )
+            <Link
+              key={link.name}
+              to={link.path}
+              className={`text-[12px] font-bold tracking-[0.1em] transition-all duration-300 hover:scale-105 ${
+                logoLight
+                  ? (location.pathname === link.path ? 'text-brand-lavender' : 'text-slate-300 hover:text-white')
+                  : (location.pathname === link.path ? 'text-brand-navy' : 'text-brand-navy/80 hover:text-brand-navy')
+              }`}
+            >
+              {link.name}
+            </Link>
           ))}
           <Link
             to="/contact"
@@ -82,29 +69,14 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
           <div className="md:hidden fixed inset-0 top-[68px] bg-black/30 z-[9998]" onClick={() => setIsMobileMenuOpen(false)} aria-hidden="true" />
           <div className="md:hidden fixed left-0 right-0 top-[68px] bottom-0 h-[calc(100dvh-68px)] min-h-[calc(100vh-68px)] bg-[#ffffff] z-[9999] animate-fade-in flex flex-col p-6 pt-8 gap-6 overflow-y-auto shadow-2xl pb-[max(1.5rem,env(safe-area-inset-bottom))]">
           {navLinks.map((link) => (
-            link.isExternal ? (
-              <a
-                key={link.name}
-                href={link.path}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-2xl font-bold tracking-tight text-brand-navy"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {link.name}
-              </a>
-            ) : (
-              <Link
-                key={link.name}
-                to={link.path}
-                className={`text-2xl font-bold tracking-tight ${
-                  location.pathname === link.path ? 'text-brand-navy' : 'text-brand-navy'
-                }`}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {link.name}
-              </Link>
-            )
+            <Link
+              key={link.name}
+              to={link.path}
+              className="text-2xl font-bold tracking-tight text-brand-navy"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              {link.name}
+            </Link>
           ))}
           <Link
             to="/contact"

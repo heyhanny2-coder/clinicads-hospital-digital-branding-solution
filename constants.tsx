@@ -73,6 +73,8 @@ const PORTFOLIO_IMAGES = [
   'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop',
   'https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800&auto=format&fit=crop',
   'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1584515159900-e29d78bc9714?q=80&w=800&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1559839734-2b71f1e598c6?q=80&w=800&auto=format&fit=crop',
 ];
 
 export const PORTFOLIO: PortfolioItem[] = [
@@ -92,6 +94,8 @@ export const PORTFOLIO: PortfolioItem[] = [
   { id: '14', category: '치과', title: '연세타이밍치과의원', location: '강남구', review: '통합 마케팅으로 병원 가치가 높아졌어요. 예약도 꾸준히 들어오고 있어요.', imageUrl: PORTFOLIO_IMAGES[13] },
   { id: '15', category: '정형외과', title: '광명척척정형외과의원', location: '광명시', review: '지역 검색에서 잘 노출되게 되었어요. 콘텐츠 퀄리티 덕분에 신뢰도도 올랐어요.', imageUrl: PORTFOLIO_IMAGES[14] },
   { id: '16', category: '한의원', title: '창명한의원', location: '서울', review: '온라인 브랜딩으로 병원 인지도가 높아졌어요. 검색 노출과 예약이 함께 늘었습니다.', imageUrl: PORTFOLIO_IMAGES[15] },
+  { id: '17', category: '치과', title: '배방으뜸치과의원', location: '아산시', review: '지역 검색과 플레이스 관리 덕분에 신규 환자 문의가 늘었어요. 병원 이미지도 한층 정돈됐습니다.', imageUrl: PORTFOLIO_IMAGES[16] },
+  { id: '18', category: '비뇨의학과', title: '성북김준비뇨의학과', location: '성북구', review: '콘텐츠와 검색 구조를 잡아 주셔서 상담·예약 문의가 꾸준히 들어와요. 전문성이 잘 드러나요.', imageUrl: PORTFOLIO_IMAGES[17] },
 ];
 
 /** 메인 페이지에 노출할 포트폴리오 (순서 유지) */
@@ -152,7 +156,7 @@ export const getInquiryActivity = (): { hospital: string; category: string; loca
   const now = new Date();
   let totalDaysAgo = 0;
   const result = shuffled.map((h) => {
-    const gap = Math.floor(Math.random() * 6) + 1;
+    const gap = Math.floor(Math.random() * 6) + 1; 
     totalDaysAgo += gap;
     const d = new Date(now);
     d.setDate(d.getDate() - totalDaysAgo);

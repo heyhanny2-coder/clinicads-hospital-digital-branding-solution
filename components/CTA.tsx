@@ -59,14 +59,6 @@ const CTA: React.FC = () => {
             무료 진단 신청 (선택 사항 없음)
           </Link>
         <a
-          href="https://clickadzcount.vercel.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-shine w-full sm:w-auto bg-white hover:bg-slate-50 text-brand-navy border border-brand-rose px-16 py-6 rounded-full text-sm font-semibold tracking-[0.15em] uppercase transition-all duration-300 hover:border-brand-lavender hover:-translate-y-0.5"
-        >
-          맞춤 견적 받아보기
-        </a>
-        <a
           href={CONTACT_INFO.kakao}
           target="_blank"
           rel="noopener noreferrer"

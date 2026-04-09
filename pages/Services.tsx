@@ -54,14 +54,6 @@ const Services: React.FC = () => {
             <p className="text-white/90 font-normal">병원의 현재 상황을 진단하고 최적의 패키지를 제안해 드립니다.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4">
-            <a
-              href="https://clickadzcount.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-brand-navy hover:bg-brand-navy/90 text-white px-10 py-5 rounded-full font-bold text-base transition-all text-center"
-            >
-              맞춤 견적 받아보기
-            </a>
             <Link
               to="/contact"
               className="bg-white text-brand-navy hover:bg-brand-light px-10 py-5 rounded-full font-bold text-base transition-all text-center"
